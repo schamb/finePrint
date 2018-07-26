@@ -33,7 +33,14 @@ class UserInput(webapp.RequestHandler):
         template = jinja_environment.get_template('addcompany.html')
         self.response.out.write(template.render())
 
+class OutputHandler(webapp2.RequestHandler):
+    def post(self):
+        template = jinja_environment.get_template('companyname.html')
+        self.response.out.write(template.render(data = data))
+
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler)
+    ('/adddcompany', UserInput)
+    ('/companyname', OutputHandler)
 ], debug=True)
