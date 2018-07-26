@@ -5,7 +5,7 @@
 /* Create three equal columns that floats next to each other */
 .column {
     float: left;
-    width: 600px;
+    width: 850px;
     padding: 10px;
     height: 1000000000000000000px; /* Should be removed. Only for demonstration */
 }
@@ -19,35 +19,69 @@
 
 
 .camera {
-  color: rgb(42, 33, 11); font-family: roboto thin;
+  color: #2A210B; font-family: 'Roboto', sans-serif; font-size: 25px
 }
 
 body {
-    background-color: white;
+    background-color: #d5d6c0;
 }
 
 .terms {
-  color: rgb(42, 33, 11); font-family: roboto thin; border: 1px solid black;
+  color: rgb(42, 33, 11); font-family: 'Roboto', sans-serif; border: 1px solid black; font-size: 25px
 }
 
 .highc {
   float: left;
-  width:33.33%;
+  width:400px;
   padding: 10px;
-  height: 500px;
+  height: 1000000000px;
+
 }
 
 .redc {
   float: left;
-  width: 33.33%;
+  width: 428px;
   padding: 10px;
-  height: 500px;
+  height: 10000000000px;
 }
 h1 {
-  color: rgb(77, 44, 61); font-family: roboto thin; font-size: 60px
+  color: rgb(77, 44, 61);
+  font-family: 'Roboto', sans-serif;
+  font-size: 70px
 
 }
 
 h2 {
-  color:rgb(21, 87, 101); font-family: roboto thin
+  color:rgb(21, 87, 101);
+  font-family: 'Roboto', sans-serif;
+  font-size: 35px
+}
+
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #57652A;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 6px #ab9353;
+  margin: 20px ;
+  font-family: 'Roboto', sans-serif;
+}
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+.button:hover {background-color: #343d19}
+
+.button:active {
+  background-color: #57652A;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
 }
