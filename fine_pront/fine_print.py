@@ -3,24 +3,18 @@ import finePrintFunctions as fpFxs
 
 def main():
     #open text file
-<<<<<<< HEAD
-    doc = open("fp.txt", "r")
-=======
+
     doc = open("txtFiles/fp.txt", "r")
->>>>>>> f7bd6d07a81338e251f1d2262f6325d23877013b
+
     docData = doc.read()
     docData = list(docData.split(" "))
     doc.close()
 
-<<<<<<< HEAD
-    termsDoc = open("DATA.txt", "r")
-    keyTerms = termsDoc.readlines()
-    termsDoc.close()
-=======
+
     # termsDoc = open("DATA.txt", "r")
     # keyTerms = termsDoc.readlines()
     # termsDoc.close()
->>>>>>> f7bd6d07a81338e251f1d2262f6325d23877013b
+
     while True:
         print("DATA\nUSER\nCAMERA\nMICROPHONE\nBILLING\nLOCATION\nALL\nSTOP\n")
         specTerm = input("What would you like to look for? ")
