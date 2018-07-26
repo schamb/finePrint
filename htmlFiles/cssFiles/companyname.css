@@ -4,10 +4,12 @@
 
 /* Create three equal columns that floats next to each other */
 .column {
+
     float: left;
-    width: 33.33%;
-    padding: 10px;
+    width: 25%;
+    padding: 50px;
     height: 500px; /* Should be removed. Only for demonstration */
+
 }
 
 /* Clear floats after the columns */
@@ -15,6 +17,7 @@
     content: "";
     display: table;
     clear: both;
+
 }
 dt {
 
@@ -25,7 +28,12 @@ dt {
 }
 
 h1 {
-  fontgs
+  font-family: 'Gothic A1', sans-serif;
+  font-size: 60px;
+  font-weight: lighter;
+  color: #4D2C3D;
+  margin-bottom: 2%;
+  margin-top: -1%;
 }
 
 button{
@@ -42,4 +50,24 @@ button{
 }
 button:hover{
   background-color: #2A210B;
+}
+
+h2{
+  font-family: 'Gothic A1', sans-serif;
+  font-weight: lighter;
+  font-size: 30px;
+  color: #155765;
+  
+}
+dt{
+  color: #AB9353;
+  font-family: 'Gothic A1', sans-serif;
+}
+#text{
+  color: black;
+  font-family: 'Gothic A1', sans-serif;
+}
+body{
+  background: #e0e0cc;
+
 }

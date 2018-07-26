@@ -15,14 +15,16 @@
     <style>
 * {
     box-sizing: border-box;
+
 }
 
 /* Create three equal columns that floats next to each other */
 .column {
-    float: left;
-    width: 33.33%;
-    padding: 10px;
-    height: 500px; /* Should be removed. Only for demonstration */
+  float: left;
+  width: 33.33%;
+  padding: 10px;
+  margin-top: 0%;
+     /* Should be removed. Only for demonstration */
 }
 
 /* Clear floats after the columns */
@@ -35,7 +37,7 @@
   <button onclick="window.location.href='../index.html'">《 go back</button>
     <!-- <button type="button"><a href="index.html">《 back</a></button> -->
 <!-- >>>>>>> 334f1287f17c09ab3764bafe85b4f44356248e9e -->
-    <p>🔍</p>
+
 
 
 
@@ -45,32 +47,45 @@
     <h1><center>Company Name</center></h1>
 
 
-
+<center>
     <div class="row">
-  <div class="column" style="background-color:#aaa;">
+  <div class="column" style="background-color:#f7f6ea;">
     <h2>Highlighted Words</h2>
     <dl>
-  <dt class="camera">Camera</dt>
-  <dt>Microphone</dt>
-  <dt>Data Selling</dt>
-  <dt>Third Party</dt>
-  <dt>Tracking</dt>
+  <dt><input type="checkbox" name="user" value="User">User</dt>
+  <p></p>
+  <dt><input type="checkbox" name="microphone" value="Microphone">Microphone</dt>
+  <p></p>
+  <dt><input type="checkbox" name="data" value="Data">Data</dt>
+  <p></p>
+  <dt><input type="checkbox" name="billing" value="Billing">Billing</dt>
+  <p></p>
+  <dt><input type="checkbox" name="camera" value="Camera">Camera</dt>
+  <p></p>
+  <dt><input type="checkbox" name="location" value="Location">Location</dt>
+  <p></p>
+  <dt><input type="checkbox" name="all" value="All">All</dt>
+
 </dl>
   </div>
-  <div class="column" style="background-color:#bbb;">
+  <div class="column" style="background-color:white;">
     <h2>Terms and Conditions</h2>
-    <p>We use your microphone because we are evil and want to hack your phone muahahahha!</p>
+    <p id="text">We use your microphone because we are evil and want to hack your phone muahahahha!</p>
   </div>
-  <div class="column" style="background-color:#ccc;">
+  <div class="column" style="background-color:#f7f6ea;">
     <h2>Red Flags</h2>
     <dl>
   <dt>Selling Data</dt>
+  <p></p>
   <dt>Third Party</dt>
+  <p></p>
   <dt>Change Terms and Conditions</dt>
 </dl>
 
   </div>
 </div>
+</center>
+
 
 
 
