@@ -5,9 +5,9 @@
 /* Create three equal columns that floats next to each other */
 .column {
     float: left;
-    width: 33.33%;
+    width: 600px;
     padding: 10px;
-    height: 500px; /* Should be removed. Only for demonstration */
+    height: 1000000000000000000px; /* Should be removed. Only for demonstration */
 }
 
 /* Clear floats after the columns */
@@ -16,14 +16,38 @@
     display: table;
     clear: both;
 }
-dt {
-  
-}
+
 
 .camera {
+  color: rgb(42, 33, 11); font-family: roboto thin;
+}
+
+body {
+    background-color: white;
+}
+
+.terms {
+  color: rgb(42, 33, 11); font-family: roboto thin; border: 1px solid black;
+}
+
+.highc {
+  float: left;
+  width:33.33%;
+  padding: 10px;
+  height: 500px;
+}
+
+.redc {
+  float: left;
+  width: 33.33%;
+  padding: 10px;
+  height: 500px;
+}
+h1 {
+  color: rgb(77, 44, 61); font-family: roboto thin ; font-size: 60px
 
 }
 
-h1 {
-  fontgs
+h2 {
+  color:rgb(21, 87, 101); font-family: roboto thin
 }
