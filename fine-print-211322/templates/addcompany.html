@@ -12,12 +12,17 @@
     <title>Fine Print</title>
   </head>
   <body>
+
       <!-- <button type="button"><a href="index.html">《 back</a></button> -->
       <button onclick="window.location.href='index.html'">Back</button>
 
     <h1><center>Company Name</center></h1>
 
     <h2> Paste terms and conditions here</h2>
+    <form action="/addcompany?data=userInput" method="post">
+      <textarea value = "Insert text" name="userInput"></textarea>
+      <input  type="submit" value="submit">
+    </form>
 
 
 
