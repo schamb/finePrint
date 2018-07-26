@@ -14,11 +14,24 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-import webapp2
+import webapp2, jinja2, os
+from google.appengine.ext import ndb
+
+jinja_environment = jinja2.Environment(
+    loader=jinja2.FileSystemsLoader(os.path.dirname(__file__)),
+    extensions=['jinja2.ext.autoescape'],
+    autoescape=True)
+
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
         self.response.write('Hello world!')
+
+class UserInput(webapp.RequestHandler):
+    def post(self):
+        new_comp = self.requst.get('new_comp')
+
+
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler)
