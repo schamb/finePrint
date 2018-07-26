@@ -43,7 +43,7 @@ body {
     <!--TODO: i commented this out so the go button would wokr idk what is does -> <form action="/action_page.php"> -->
       <center><input type="text" placeholder="Enter a Company Name . . ." name="search">
         <!-- this doesnt actually search it just gors to the add company page until we can do search -->
-      <button type="submit" onclick="window.location.href='companyname.html'"><i class="fa fa-search"></i></button></center>
+      <button type="submit" onclick="/companyname"><i class="fa fa-search"></i></button></center>
 
 
   </div>
@@ -51,8 +51,14 @@ body {
 
 
 <!-- <h4><center>about us</center></h4> -->
-<h4><center><button onclick="window.location.href='aboutus.html'">About Us »</button></center></h4>
-<center><button onclick="window.location.href='addcompany.html'">Add Company »</button></center>
+
+<form action="/aboutus" method="get">
+  <h4><center><button onclick="/aboutus">About Us »</button></center></h4>
+</form>
+<form action="/addcompany" method="get">
+  <h4><center><button onclick="/addcompany">Add Company »</button></center></h4>
+</form>
+
 
 
 
