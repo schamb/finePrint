@@ -21,3 +21,10 @@ share
 email
 phone
 address
+collect
+gather
+how we use
+conditions of use
+opt-out
+delete
+deactivate
