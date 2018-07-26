@@ -18,7 +18,7 @@ import webapp2, jinja2, os
 from google.appengine.ext import ndb
 
 template_directory = os.path.join(os.path.dirname(__file__),'templates')
-jinja_environment = jinja2.Enviornment(loader = jinja2.FilsSystemLoader(template_directory))
+jinja_environment = jinja2.Environment(loader = jinja2.FilsSystemLoader(template_directory))
 
 class User(ndb.Model):
     privacy_policy = ndb.StringProperty()
@@ -41,7 +41,7 @@ class OutputHandler(webapp2.RequestHandler):
 
 
 app = webapp2.WSGIApplication([
-    ('/', MainHandler)
-    ('/addcompany', UserInput)
+    ('/', MainHandler),
+    ('/addcompany', UserInput),
     ('/companyname', OutputHandler)
 ], debug=True)
