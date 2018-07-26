@@ -1,0 +1,6 @@
+data
+metadata
+storage
+tracking
+cookies
+share
