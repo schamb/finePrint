@@ -36,6 +36,7 @@ class OutputHandler(webapp2.RequestHandler):
         template = jinja_environment.get_template('companyname.html')
         data = self.request.get('userInput')
         self.response.out.write(template.render(data = data))
+        
 class AboutUsHandler(webapp2.RequestHandler):
     def get(self):
         template = jinja_environment.get_template('aboutus.html')
