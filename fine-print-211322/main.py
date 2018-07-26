@@ -27,17 +27,24 @@ class MainHandler(webapp2.RequestHandler):
         self.response.out.write(template.render())
 
 class UserInput(webapp2.RequestHandler):
-    def post(self):
+    def get(self):
         template = jinja_environment.get_template('addcompany.html')
         self.response.out.write(template.render())
 
 class OutputHandler(webapp2.RequestHandler):
     def post(self):
         template = jinja_environment.get_template('companyname.html')
+        data = self.request.get('userInput')
         self.response.out.write(template.render(data = data))
+class AboutUsHandler(webapp2.RequestHandler):
+    def get(self):
+        template = jinja_environment.get_template('aboutus.html')
+        self.response.out.write(template.render())
+
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler),
     ('/addcompany', UserInput),
-    ('/companyname', OutputHandler)
+    ('/companyname', OutputHandler),
+    ('/aboutus', AboutUsHandler)
 ], debug=True)
