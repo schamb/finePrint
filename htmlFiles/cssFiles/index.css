@@ -25,6 +25,7 @@ button{
     display: inline-block;
     font-size: 15px;
     border-radius: 15px;
+    font-family: 'Gothic A1', sans-serif;
 }
 button:hover{
   background-color: #2A210B;
