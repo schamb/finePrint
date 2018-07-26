@@ -32,9 +32,13 @@ button{
   background-color: #57652A; /* Green */
     border: none;
     color: white;
-    padding: 15px 32px;
+    padding: 10px 10px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
+    font-size: 15px;
+    border-radius: 15px;
+}
+button:hover{
+  background-color: #2A210B;
 }
