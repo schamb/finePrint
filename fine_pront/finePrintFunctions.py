@@ -14,7 +14,11 @@ def remove_punctuation(value):
 #funcion for DATA
 def find_DATA(document):
     #open keyTerms file
+<<<<<<< HEAD
     termsDoc = open("DATA.txt", "r")
+=======
+    termsDoc = open("txtFiles/DATA.txt", "r")
+>>>>>>> f7bd6d07a81338e251f1d2262f6325d23877013b
     keyTerms = termsDoc.readlines()
     termsDoc.close()
     for x in range(len(document)):
@@ -33,7 +37,11 @@ def find_DATA(document):
     return document
 def find_ALL(document):
     #open keyTerms file
+<<<<<<< HEAD
     termsDoc = open("ALL.txt", "r")
+=======
+    termsDoc = open("txtFiles/ALL.txt", "r")
+>>>>>>> f7bd6d07a81338e251f1d2262f6325d23877013b
     keyTerms = termsDoc.readlines()
     termsDoc.close()
     for x in range(len(document)):
@@ -52,7 +60,11 @@ def find_ALL(document):
     return document
 def find_LOCATION(document):
     #open keyTerms file
+<<<<<<< HEAD
     termsDoc = open("LOCATION.txt", "r")
+=======
+    termsDoc = open("txtFiles/LOCATION.txt", "r")
+>>>>>>> f7bd6d07a81338e251f1d2262f6325d23877013b
     keyTerms = termsDoc.readlines()
     termsDoc.close()
     for x in range(len(document)):
@@ -71,7 +83,11 @@ def find_LOCATION(document):
     return document
 def find_BILLING(document):
     #open keyTerms file
+<<<<<<< HEAD
     termsDoc = open("BILLING.txt", "r")
+=======
+    termsDoc = open("txtFiles/BILLING.txt", "r")
+>>>>>>> f7bd6d07a81338e251f1d2262f6325d23877013b
     keyTerms = termsDoc.readlines()
     termsDoc.close()
     for x in range(len(document)):
@@ -90,7 +106,11 @@ def find_BILLING(document):
     return document
 def find_CAMERA(document):
     #open keyTerms file
+<<<<<<< HEAD
     termsDoc = open("CAMERA.txt", "r")
+=======
+    termsDoc = open("txtFiles/CAMERA.txt", "r")
+>>>>>>> f7bd6d07a81338e251f1d2262f6325d23877013b
     keyTerms = termsDoc.readlines()
     termsDoc.close()
     for x in range(len(document)):
@@ -109,7 +129,11 @@ def find_CAMERA(document):
     return document
 def find_USER(document):
     #open keyTerms file
+<<<<<<< HEAD
     termsDoc = open("USER.txt", "r")
+=======
+    termsDoc = open("txtFiles/USER.txt", "r")
+>>>>>>> f7bd6d07a81338e251f1d2262f6325d23877013b
     keyTerms = termsDoc.readlines()
     termsDoc.close()
     for x in range(len(document)):
@@ -128,7 +152,11 @@ def find_USER(document):
     return document
 def find_MICROPHONE(document):
     #open keyTerms file
+<<<<<<< HEAD
     termsDoc = open("MICROPHONE.txt", "r")
+=======
+    termsDoc = open("txtFiles/MICROPHONE.txt", "r")
+>>>>>>> f7bd6d07a81338e251f1d2262f6325d23877013b
     keyTerms = termsDoc.readlines()
     termsDoc.close()
     for x in range(len(document)):

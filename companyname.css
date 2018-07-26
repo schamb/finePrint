@@ -1,0 +1,53 @@
+* {
+    box-sizing: border-box;
+}
+
+/* Create three equal columns that floats next to each other */
+.column {
+    float: left;
+    width: 600px;
+    padding: 10px;
+    height: 1000000000000000000px; /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+
+.camera {
+  color: rgb(42, 33, 11); font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: white;
+}
+
+.terms {
+  color: rgb(42, 33, 11); font-family: Arial, Helvetica, sans-serif; border: 1px solid black;
+}
+
+.highc {
+  float: left;
+  width:33.33%;
+  padding: 10px;
+  height: 500px;
+}
+
+.redc {
+  float: left;
+  width: 33.33%;
+  padding: 10px;
+  height: 500px;
+}
+h1 {
+  color: rgb(77, 44, 61); font-family: Arial, Helvetica, sans-serif; font-size: 60px
+
+}
+
+h2 {
+  color:rgb(21, 87, 101); font-family: Arial, Helvetica, sans-serif
+}

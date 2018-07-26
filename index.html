@@ -2,7 +2,10 @@
 
 <html lang="en" dir="ltr">
   <head>
+    <link rel="icon" href="htmlFiles/1611.ico">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="htmlFiles/cssFiles/index.css">
+    <link href="https://fonts.googleapis.com/css?family=Gothic+A1" rel="stylesheet">
     <meta charset="utf-8">
     <title>FinePrint</title>
 
@@ -22,7 +25,10 @@ body {
 
     <h1><center>Fine Print</center></h1>
 
-    <h2><center>Our mission is to blahjsdfc cejfah aeruhcflsi jral vfhcv sueghciqle vveuarhclis erliacsfeaugclir vquwehr qladiw  cwuehrq aler uhwlakehc ahjsdfc cejfah aeruhcflsi jral vfhcv sueghciqle vveuarhclis erliacsfeaugclir ahjsdfc cejfah aeruhcflsi jral vfhcv sueghciqle vveuarhclis erliacsfeaugclir ahjsdfc cejfah aeruhcflsi jral vfhcv sueghciqle vveuarhclis erliacsfeaugclir.</center></h2>
+    <h2><center>Most people aren’t aware of the data that websites are collecting or who
+       it is being shared with, and Fine Print wants to help. We analyze the Terms and
+        Conditions statements as well as the Privacy Policies of any website and alert
+        you when key terms such as third party appear in the text.</center></h2>
 
 
 
@@ -34,9 +40,10 @@ body {
 
 
      <div class="search-container">
-    <form action="/action_page.php">
+    <!--TODO: i commented this out so the go button would wokr idk what is does -> <form action="/action_page.php"> -->
       <center><input type="text" placeholder="Enter a Company Name . . ." name="search">
-      <button type="submit"><i class="fa fa-search"></i><a href="companyname.html">go</a> </button></center>
+        <!-- this doesnt actually search it just gors to the add company page until we can do search -->
+      <button type="submit" onclick="window.location.href='htmlFiles/companyname.html'"><i class="fa fa-search"></i></button></center>
 
 
   </div>
@@ -44,8 +51,8 @@ body {
 
 
 <!-- <h4><center>about us</center></h4> -->
-<h4><center><button type="button" ><a href="aboutus.html">  About Us </a></button></center></h4>
-<center><button type="button" ><a href="addcompany.html"> Add Company </a></button></center>
+<h4><center><button onclick="window.location.href='htmlFiles/aboutus.html'">About Us »</button></center></h4>
+<center><button onclick="window.location.href='htmlFiles/addcompany.html'">Add Company »</button></center>
 
 
 

@@ -1,0 +1,75 @@
+* {
+    box-sizing: border-box;
+}
+
+/* Create three equal columns that floats next to each other */
+.column {
+    float: left;
+    width: 600px;
+    padding: 10px;
+    height: 1000000000000000000px; /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+<<<<<<< HEAD:companyname.css
+
+=======
+dt {
+
+}
+>>>>>>> ceef9b443bc547b79661d9e599c485a7d38f8052:htmlFiles/cssFiles/companyname.css
+
+.camera {
+  color: rgb(42, 33, 11); font-family: roboto thin;
+}
+
+body {
+    background-color: white;
+}
+
+.terms {
+  color: rgb(42, 33, 11); font-family: roboto thin; border: 1px solid black;
+}
+
+.highc {
+  float: left;
+  width:33.33%;
+  padding: 10px;
+  height: 500px;
+}
+
+.redc {
+  float: left;
+  width: 33.33%;
+  padding: 10px;
+  height: 500px;
+}
+h1 {
+  color: rgb(77, 44, 61); font-family: roboto thin ; font-size: 60px
+
+}
+
+h2 {
+  color:rgb(21, 87, 101); font-family: roboto thin
+}
+
+button{
+  background-color: #57652A; /* Green */
+    border: none;
+    color: white;
+    padding: 10px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    border-radius: 15px;
+    font-family: 'Gothic A1', sans-serif;
+}
+button:hover{
+  background-color: #2A210B;
+}
