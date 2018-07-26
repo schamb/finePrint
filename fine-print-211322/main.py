@@ -17,10 +17,11 @@
 import webapp2, jinja2, os
 from google.appengine.ext import ndb
 
-jinja_environment = jinja2.Environment(
-    loader=jinja2.FileSystemsLoader(os.path.dirname(__file__)),
-    extensions=['jinja2.ext.autoescape'],
-    autoescape=True)
+template_directory = os.path.join(os.path.dirname(__file__),'templates')
+jinja_environment = jinja2.Enviornment(loader = jinja2.FilsSystemLoader(template_directory))
+
+class User(ndb.Model):
+    privacy_policy = ndb.StringProperty()
 
 
 class MainHandler(webapp2.RequestHandler):
@@ -29,8 +30,8 @@ class MainHandler(webapp2.RequestHandler):
 
 class UserInput(webapp.RequestHandler):
     def post(self):
-        new_comp = self.requst.get('new_comp')
-
+        template = jinja_environment.get_template('addcompany.html')
+        self.response.out.write(template.render())
 
 
 app = webapp2.WSGIApplication([
