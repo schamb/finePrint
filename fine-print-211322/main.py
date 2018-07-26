@@ -26,7 +26,8 @@ class User(ndb.Model):
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
-        self.response.write('Hello world!')
+        template = jinja_environment.get_template('index.html')
+        self.response.out.write(template.render())
 
 class UserInput(webapp.RequestHandler):
     def post(self):
@@ -41,6 +42,6 @@ class OutputHandler(webapp2.RequestHandler):
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler)
-    ('/adddcompany', UserInput)
+    ('/addcompany', UserInput)
     ('/companyname', OutputHandler)
 ], debug=True)
