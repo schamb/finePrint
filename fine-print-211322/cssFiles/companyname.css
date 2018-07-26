@@ -5,7 +5,7 @@
 /* Create three equal columns that floats next to each other */
 .column {
     float: left;
-    width: 850px;
+    width: 900px;
     padding: 10px;
     height: 1000000000000000000px; /* Should be removed. Only for demonstration */
 }

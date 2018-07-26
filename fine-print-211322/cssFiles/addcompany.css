@@ -1,9 +1,9 @@
 h1 {
-  color: rgb(77, 44, 61); font-family: roboto thin;
+  color: rgb(77, 44, 61); font-family: 'Roboto', sans-serif; font-size: 70px
 }
 
 h2 {
-  font-family: roboto thin; border: 1px solid black;
+  font-family: 'Roboto', sans-serif; border: 1px solid black; font-size: 35px
 }
 
 
