@@ -19,7 +19,7 @@
 
 
 .camera {
-  color: rgb(42, 33, 11); font-family: Arial, Helvetica, sans-serif;
+  color: rgb(42, 33, 11); font-family: roboto thin;
 }
 
 body {
@@ -27,7 +27,7 @@ body {
 }
 
 .terms {
-  color: rgb(42, 33, 11); font-family: Arial, Helvetica, sans-serif; border: 1px solid black;
+  color: rgb(42, 33, 11); font-family: roboto thin; border: 1px solid black;
 }
 
 .highc {
@@ -44,10 +44,10 @@ body {
   height: 500px;
 }
 h1 {
-  color: rgb(77, 44, 61); font-family: Arial, Helvetica, sans-serif; font-size: 60px
+  color: rgb(77, 44, 61); font-family: roboto thin; font-size: 60px
 
 }
 
 h2 {
-  color:rgb(21, 87, 101); font-family: Arial, Helvetica, sans-serif
+  color:rgb(21, 87, 101); font-family: roboto thin
 }
