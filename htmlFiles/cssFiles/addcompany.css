@@ -14,6 +14,10 @@ button:hover{
   background-color: #2A210B;
 }
 
+body{
+  background-color: #f7f6ea;
+}
+
 h1{
  font-family: 'Gothic A1', sans-serif;
  font-size: 60px;
