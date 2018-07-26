@@ -22,11 +22,7 @@
 }
 
 body {
-<<<<<<< HEAD
   background-color: white;
-=======
-    background-color: #d5d6c0;
->>>>>>> 47f67325f175209b850408a07b3ff28efb31e54c
 }
 
 .terms {
@@ -48,15 +44,9 @@ body {
   height: 10000000000px;
 }
 h1 {
-<<<<<<< HEAD
-  color: rgb(77, 44, 61); font-family: roboto thin; font-size: 60px
-  margin-bottom: 2%;
-  margin-top: -1%;
-=======
   color: rgb(77, 44, 61);
   font-family: 'Roboto', sans-serif;
   font-size: 70px
->>>>>>> 47f67325f175209b850408a07b3ff28efb31e54c
 
 }
 
