@@ -7,7 +7,6 @@
     float: left;
     width: 600px;
     padding: 10px;
-    height: 1000000000000000000px; /* Should be removed. Only for demonstration */
 }
 
 /* Clear floats after the columns */
@@ -23,7 +22,7 @@
 }
 
 body {
-    background-color: white;
+  background-color: white;
 }
 
 .terms {
@@ -45,6 +44,8 @@ body {
 }
 h1 {
   color: rgb(77, 44, 61); font-family: roboto thin; font-size: 60px
+  margin-bottom: 2%;
+  margin-top: -1%;
 
 }
 
