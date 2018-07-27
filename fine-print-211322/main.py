@@ -67,7 +67,7 @@ class OutputHandler(webapp2.RequestHandler):
         keyTerms = ["tracking","location","demographic","billing","sell","selling","data","metadata","storage","tracking","cookies","camera","video","photo","user","contact","information","microphone","audio","share","email","phone","address","collect",
         "gather","how we use", "conditions of use", "opt-out", "delete", "deactivate"]
         newDocument = document.split(" ")
-        for x in range(len(document)):
+        for x in range(len(newDocument)):
             word = newDocument[x].lower()
             waye = self.remove_punctuation(word)
 
@@ -182,22 +182,26 @@ class OutputHandler(webapp2.RequestHandler):
         if audioCheckBox == 'audioCheck':
             new_audio = self.find_MICROPHONE(data)
         else:
-            self.response.out.write('audio not checked')
             new_audio = "audio not checked"
         #Data check box
-        dataCheckBox = self.request.get("data")
-        if dataCheckBox == 'dataCheck':
-            self.response.out.write("Data check")
-            new_data = self.find_DATA(data)
+        allCheckBox = self.request.get("all")
+        if allCheckBox == 'allCheck':
+            new_all = self.find_ALL(data)
         else:
-            new_data = "Data not Checked"
-            self.response.out.write('data not checked')
+            new_all = "All not Checked"
+
+        # dataCheckbox = self.request.get("dataBox")
+        # if dataCheckbox == "dataCheck":
+        #     new_data = self.find_DATA(data)
+        # else:
+        #     new_data = "Data not checked"
+
 
 
 
         template = jinja_environment.get_template('companyname.html')
 
-        self.response.out.write(template.render(data = data, audioWords = new_audio, dataWords = new_data))
+        self.response.out.write(template.render(data = data, audioWords = new_audio, allWords = new_all))
 
 class AboutUsHandler(webapp2.RequestHandler):
     def get(self):

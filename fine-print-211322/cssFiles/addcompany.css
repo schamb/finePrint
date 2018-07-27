@@ -10,3 +10,20 @@ h2 {
 body {
     background-color: #f7f6ea;
 }
+
+button {
+  display: inline-block;
+  padding: 5px 10px;
+  font-size: 20px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #57652A;
+  border: none;
+  border-radius: 15px;
+  margin: 20px ;
+  font-family: 'Roboto', sans-serif;
+}
+.button:hover {background-color: #343d19}
