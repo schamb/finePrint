@@ -184,9 +184,9 @@ class OutputHandler(webapp2.RequestHandler):
         else:
             new_audio = "audio not checked"
         #Data check box
-        allCheckBox = self.request.get("user")
-        if allCheckBox == 'userCheck':
-            new_all = self.find_USER(data)
+        allCheckBox = self.request.get("location")
+        if allCheckBox == 'locationCheck':
+            new_all = self.find_LOCATION(data)
         else:
             new_all = "All not Checked"
 
