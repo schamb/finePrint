@@ -19,32 +19,34 @@
     <h1><center>Company Name</center></h1>
 
     <h2> Paste terms and conditions here</h2>
+    <!-- &audioCheckBox=audio&dataCheckBox=data -->
 
     <form action="/companyname?data=userInput" method="post">
       <textarea value = "Insert text" name="userInput"></textarea>
       <input  type="submit" value="add">
 
       <h2><center>Highlighted Words</center></h2>
-      <dl><center>
-      <input type="checkbox" class="camera">Audio / Microphone</input>
+      <center>
+      <input type="checkbox" class="camera" name="audio" value = 'audioCheck'>Audio / Microphone</input>
       <p></p>
-      <input type="checkbox" class="camera">Billing Information</input>
-      <p></p>
-
-      <input type="checkbox" class="camera">Camera</input>
+      <input type="checkbox" class="camera" name="billing" value = 'billingCheck'>Billing Information</input>
       <p></p>
 
-      <input type="checkbox" class="camera">Data</input>
+      <input type="checkbox" class="camera" name="camera" value = 'cameraCheck'>Camera</input>
       <p></p>
 
-      <input type="checkbox" class="camera">Location</input>
+      <input type="checkbox" class="camera" name="data" value = 'dataCheck'>Data</input>
       <p></p>
 
-      <input type="checkbox" class="camera">User Information</input>
+      <input type="checkbox" class="camera" name="location" value = 'locationCheck'>Location</input>
       <p></p>
 
-      <input type="checkbox" class="camera">All</input>
+      <input type="checkbox" class="camera" name="user" value = 'userCheck'>User Information</input>
       <p></p>
+
+      <input type="checkbox" class="camera" name="all" value = 'allCheck'>All</input>
+      <p></p>
+    </center>
     </form>
 
 

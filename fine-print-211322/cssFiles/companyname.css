@@ -92,3 +92,8 @@ input{
   color: #AB9353;
   font-size: 25px;
 }
+
+#inputText{
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+}

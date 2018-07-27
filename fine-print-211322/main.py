@@ -33,7 +33,7 @@ class UserInput(webapp2.RequestHandler):
 
 class OutputHandler(webapp2.RequestHandler):
     #function to remove punctuation
-    def remove_punctuation(value):
+    def remove_punctuation(self, value):
         result = ""
         for c in value:
             # If char is not punctuation, add it to the result.
@@ -42,177 +42,162 @@ class OutputHandler(webapp2.RequestHandler):
         return result
 
     #funcion for DATA
-    def find_DATA(document):
+    def find_DATA(self, document):
         #open keyTerms file
 
-        termsDoc = open("cssFiles/txtFiles/DATA.txt", "r")
-
-        keyTerms = termsDoc.readlines()
-        termsDoc.close()
-        for x in range(len(document)):
-            word = document[x].lower()
-            waye = remove_punctuation(word)
+        keyTerms = ["data","metadata","storage","tracking","cookies","share"]
+        newDocument = document.split(" ")
+        for x in range(len(newDocument)):
+            word = newDocument[x].lower()
+            waye = self.remove_punctuation(word)
 
             for i in range(len(keyTerms)):
                 keyTerm = keyTerms[i]
                 keyTerm = keyTerm.strip()
 
                 if word.strip() == keyTerm:
-                    document[x] = word.upper()
+                    newDocument[x] = word.upper()
                 if waye.strip() == keyTerm:
-                    document[x] = word.upper()
+                    newDocument[x] = word.upper()
 
-        return document
-    def find_ALL(document):
+        return " ".join(newDocument)
+    def find_ALL(self, document):
         #open keyTerms file
 
-        termsDoc = open("cssFiles/txtFiles/ALL.txt", "r")
-
-        keyTerms = termsDoc.readlines()
-        termsDoc.close()
+        keyTerms = ["tracking","location","demographic","billing","sell","selling","data","metadata","storage","tracking","cookies","camera","video","photo","user","contact","information","microphone","audio","share","email","phone","address","collect",
+        "gather","how we use", "conditions of use", "opt-out", "delete", "deactivate"]
+        newDocument = document.split(" ")
         for x in range(len(document)):
-            word = document[x].lower()
-            waye = remove_punctuation(word)
+            word = newDocument[x].lower()
+            waye = self.remove_punctuation(word)
 
             for i in range(len(keyTerms)):
                 keyTerm = keyTerms[i]
                 keyTerm = keyTerm.strip()
 
                 if word.strip() == keyTerm:
-                    document[x] = word.upper()
+                    newDocument[x] = word.upper()
                 if waye.strip() == keyTerm:
-                    document[x] = word.upper()
+                    newDocument[x] = word.upper()
 
-        return document
-    def find_LOCATION(document):
+        return " ".join(newDocument)
+    def find_LOCATION(self, document):
         #open keyTerms file
-
-        termsDoc = open("cssFiles/txtFiles/LOCATION.txt", "r")
-
-        keyTerms = termsDoc.readlines()
-        termsDoc.close()
+        keyTerms = ["tracking", "location", "demographic"]
+        newDocument = document.split(" ")
         for x in range(len(document)):
             word = document[x].lower()
-            waye = remove_punctuation(word)
+            waye = self.remove_punctuation(word)
 
             for i in range(len(keyTerms)):
                 keyTerm = keyTerms[i]
                 keyTerm = keyTerm.strip()
 
                 if word.strip() == keyTerm:
-                    document[x] = word.upper()
+                    newDocument[x] = word.upper()
                 if waye.strip() == keyTerm:
-                    document[x] = word.upper()
+                    newDocument[x] = word.upper()
 
-        return document
-    def find_BILLING(document):
+        return " ".join(newDocument)
+    def find_BILLING(self, document):
         #open keyTerms file
-
-        termsDoc = open("cssFiles/txtFiles/BILLING.txt", "r")
-
-        keyTerms = termsDoc.readlines()
-        termsDoc.close()
+        keyTerms = ["billing", "sell", "selling"]
+        newDocument = document.split(" ")
         for x in range(len(document)):
-            word = document[x].lower()
-            waye = remove_punctuation(word)
+            word = newDocument[x].lower()
+            waye = self.remove_punctuation(word)
 
             for i in range(len(keyTerms)):
                 keyTerm = keyTerms[i]
                 keyTerm = keyTerm.strip()
 
                 if word.strip() == keyTerm:
-                    document[x] = word.upper()
+                    newDocument[x] = word.upper()
                 if waye.strip() == keyTerm:
-                    document[x] = word.upper()
+                    newDocument[x] = word.upper()
 
-        return document
-    def find_CAMERA(document):
+        return " ".split(newDocument)
+    def find_CAMERA(self, document):
         #open keyTerms file
-
-        termsDoc = open("cssFiles/txtFiles/CAMERA.txt", "r")
-
-        keyTerms = termsDoc.readlines()
-        termsDoc.close()
-        for x in range(len(document)):
-            word = document[x].lower()
-            waye = remove_punctuation(word)
+        keyTerms = ["camera", "video", "photo"]
+        newDocument = document.split(" ")
+        for x in range(len(newDocument)):
+            word = newDocument[x].lower()
+            waye = self.remove_punctuation(word)
 
             for i in range(len(keyTerms)):
                 keyTerm = keyTerms[i]
                 keyTerm = keyTerm.strip()
 
                 if word.strip() == keyTerm:
-                    document[x] = word.upper()
+                    newDocument[x] = word.upper()
                 if waye.strip() == keyTerm:
-                    document[x] = word.upper()
+                    newDocument[x] = word.upper()
 
-        return document
-    def find_USER(document):
+        return " ".join(newDocument)
+    def find_USER(self, document):
         #open keyTerms file
 
-        termsDoc = open("cssFiles/txtFiles/USER.txt", "r")
-
-        keyTerms = termsDoc.readlines()
-        termsDoc.close()
-        for x in range(len(document)):
-            word = document[x].lower()
-            waye = remove_punctuation(word)
+        keyTerms = ["user", "contact", "information", "emial", "phone", "address"]
+        newDocument = document.split(" ")
+        for x in range(len(newDocument)):
+            word = newDocument[x].lower()
+            waye = self.remove_punctuation(word)
 
             for i in range(len(keyTerms)):
                 keyTerm = keyTerms[i]
                 keyTerm = keyTerm.strip()
 
                 if word.strip() == keyTerm:
-                    document[x] = word.upper()
+                    newDocument[x] = word.upper()
                 if waye.strip() == keyTerm:
-                    document[x] = word.upper()
+                    newDocument[x] = word.upper()
 
-        return document
-    def find_MICROPHONE(document):
+
+        return " ".join(newDocument)
+    def find_MICROPHONE(self, document):
         #open keyTerms file
 
-        termsDoc = open("cssFiles/txtFiles/MICROPHONE.txt", "r")
-
-        keyTerms = termsDoc.readlines()
-        termsDoc.close()
-        for x in range(len(document)):
-            word = document[x].lower()
-            waye = remove_punctuation(word)
+        keyTerms = ["microphone", "audio"]
+        newDocument = document.split(" ")
+        for x in range(len(newDocument)):
+            word = newDocument[x].lower()
+            waye = self.remove_punctuation(word)
 
             for i in range(len(keyTerms)):
                 keyTerm = keyTerms[i]
                 keyTerm = keyTerm.strip()
 
                 if word.strip() == keyTerm:
-                    document[x] = word.upper()
+                    newDocument[x] = word.upper()
                 if waye.strip() == keyTerm:
-                    document[x] = word.upper()
+                    newDocument[x] = word.upper()
 
-        return document
-    def runPython(data):
-        specTerm = data#checkbox data??
-        if specTerm == "DATA":
-            poop = fpFxs.find_DATA(docData)
-        elif specTerm == "allCheck":
-            poop = fpFxs.find_ALL(docData)
-        elif specTerm == "LOCATION":
-            poop = fpFxs.find_LOCATION(docData)
-        elif specTerm == "BILLING":
-            poop = fpFxs.find_BILLING(docData)
-        elif specTerm == "CAMERA":
-            poop = fpFxs.find_CAMERA(docData)
-        elif specTerm == "USER":
-            poop = fpFxs.find_USER(docData)
-        elif specTerm == "MICROPHONE":
-            poop = fpFxs.find_MICROPHONE(docData)
-        print(" ".join(poop))
+        return " ".join(newDocument)
     def post(self):
-        template = jinja_environment.get_template('companyname.html')
         data = self.request.get('userInput')
-        name1 = self.request.get('allCheck')
-        if name1:
-            runPython(name1)
-        self.response.out.write(template.render(data = data))
+
+        #Microphone Check box
+        audioCheckBox = self.request.get('audio')
+        if audioCheckBox == 'audioCheck':
+            new_audio = self.find_MICROPHONE(data)
+        else:
+            self.response.out.write('audio not checked')
+            new_audio = "audio not checked"
+        #Data check box
+        dataCheckBox = self.request.get("data")
+        if dataCheckBox == 'dataCheck':
+            self.response.out.write("Data check")
+            new_data = self.find_DATA(data)
+        else:
+            new_data = "Data not Checked"
+            self.response.out.write('data not checked')
+
+
+
+        template = jinja_environment.get_template('companyname.html')
+
+        self.response.out.write(template.render(data = data, audioWords = new_audio, dataWords = new_data))
 
 class AboutUsHandler(webapp2.RequestHandler):
     def get(self):

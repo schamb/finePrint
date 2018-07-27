@@ -1,6 +1,1 @@
-data
-metadata
-storage
-tracking
-cookies
-share
+"data","metadata","storage","tracking","cookies","share"
