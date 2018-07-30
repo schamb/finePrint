@@ -5,7 +5,8 @@
 /* Create three equal columns that floats next to each other */
 .column {
     float: left;
-    width: 41.85%;
+    width: 71.85%;
+    height: 1000010000px;
     padding: 10px;
 }
 
@@ -22,7 +23,7 @@
 }
 
 body {
-  background-color: #d6d4c5;
+  background-color: #f7f6ea;
 }
 
 .terms {
