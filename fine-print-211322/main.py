@@ -21,11 +21,10 @@ template_directory = os.path.join(os.path.dirname(__file__),'templates')
 jinja_environment = jinja2.Environment(loader = jinja2.FileSystemLoader(template_directory))
 
 class MainHandler(webapp2.RequestHandler):
-
     def get(self):
         template = jinja_environment.get_template('index.html')
         self.response.out.write(template.render())
-
+        
 class UserInput(webapp2.RequestHandler):
     def get(self):
         template = jinja_environment.get_template('addcompany.html')
