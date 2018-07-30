@@ -32,6 +32,12 @@ class UserInput(webapp2.RequestHandler):
         self.response.out.write(template.render())
 
 class OutputHandler(webapp2.RequestHandler):
+    # user input company Name
+    # def UIcompanyName():
+    #     if addButton clicked:
+    #         companyname.html
+    #
+
     #function to remove punctuation
     def remove_punctuation(self, value):
         result = ""
@@ -175,28 +181,29 @@ class OutputHandler(webapp2.RequestHandler):
 
         return " ".join(newDocument)
     def post(self):
-        data = self.request.get('userInput')
+        companyTerms = self.request.get('terms')
+        companyName = self.request.get('name')
 
         #Microphone Check box
         audioCheckBox = self.request.get('audio')
         if audioCheckBox == 'audioCheck':
-            new_audio = self.find_MICROPHONE(data)
+            new_audio = self.find_MICROPHONE(companyTerms)
         else:
             new_audio = "audio not checked"
 
         #data check box
-        dataCheckbox = self.request.get('otherstuff')
-        if dataCheckbox == 'otherstuffCheck':
-            new_stuff = self.find_DATA(data)
+        dataCheckbox = self.request.get("dataBox")
+        if dataCheckbox == 'dataCheck':
+            new_data = self.find_DATA(companyTerms)
         else:
-            new_stuff = "Data not checked"
+            new_data = "Data not checked"
 
         #user check box
         userCheckBox = self.request.get("user")
         if userCheckBox == 'userCheck':
-            new_user = self.find_USER(data)
+            new_all = self.find_USER(companyTerms)
         else:
-            new_user = "User not Checked"
+            new_all = "User not Checked"
 
 
 
@@ -204,7 +211,7 @@ class OutputHandler(webapp2.RequestHandler):
 
         template = jinja_environment.get_template('companyname.html')
 
-        self.response.out.write(template.render(data = data, audioWords = new_audio, otherstuffWords = new_stuff, userWords = new_user))
+        self.response.out.write(template.render(name = companyName, terms = companyTerms, audioWords = new_audio, dataWords = new_data, userWords = new_all))
 
 class AboutUsHandler(webapp2.RequestHandler):
     def get(self):
