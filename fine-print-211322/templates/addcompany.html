@@ -14,9 +14,11 @@
   <body>
 
       <!-- <button type="button"><a href="index.html">《 back</a></button> -->
-    <button onclick="window.location.href='index.html'">« back</button>
+      <form action="/" method="get">
+        <button onclick="/">《  Back</button>
+      </form>
 
-    <form action="/companyname?companyName=name&companyTerms=terms" method="post">
+    <form action="/companyname?companyName=name&companyTerms=terms" method="post" name="allCheckboxes">
 
         <center>
           <textarea id="coName" value = "Enter Company Name" name = "name" placeholder="Enter Company Name here:"></textarea>
@@ -26,7 +28,7 @@
         <div class = "column-left">
 
             <textarea  id="tandc"value = "Insert text" name="terms" placeholder="Enter Privacy Policy or Terms and Conditions statements here:"></textarea>
-          <button  id="addButton" type="submit" value="add">Add</button>
+          <button  id="addButton" type="submit" value="add">Add »</button>
         </div>
 
 

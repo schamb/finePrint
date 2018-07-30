@@ -141,41 +141,58 @@ class OutputHandler(webapp2.RequestHandler):
     def post(self):
         companyTerms = self.request.get('terms')
         companyName = self.request.get('name')
-        audioCheckBox = self.request.get('audioBox')
-        dataCheckbox = self.request.get('dataBox')
-        userCheckBox = self.request.get('userBox')
-        billingCheckBox = self.request.get('billingBox')
+        audioCheckBox = self.request.get('audio')
+        dataCheckbox = self.request.get('dataInfo')
+        userCheckBox = self.request.get('user')
+        billingCheckBox = self.request.get('billing')
+        allCheckBox = self.request.get('all')
+        cameraCheckBox = self.request.get('camera')
+        locationCheckBox = self.request.get('location')
+        # self.request.get_all('allCheckboxes')
 
         #Microphone Check box
         if audioCheckBox:
             new_audio = self.find_MICROPHONE(companyTerms)
         else:
-            new_audio = "Audio not checked"
-
-
+            new_audio = ""
         #data check box
         if dataCheckbox:
             new_dataInfo = self.find_DATAINFO(companyTerms)
         else:
-            new_dataInfo = "Data not checked"
+            new_dataInfo = ""
         #user check box
         if userCheckBox:
             new_user = self.find_USER(companyTerms)
         else:
-            new_user = "User not Checked"
+            new_user = ""
 
-        #user check box
+        #billing check box
         if billingCheckBox:
             new_billing = self.find_BILLING(companyTerms)
         else:
-            new_billing = "Billing not Checked"
+            new_billing = ""
+        #all check box
+        if allCheckBox:
+            new_all = self.find_ALL(companyTerms)
+        else:
+            new_all = ""
+        #location check box
+        if locationCheckBox:
+            new_location = self.find_LOCATION(companyTerms)
+        else:
+            new_location = ""
+        #camera check box
+        if cameraCheckBox:
+            new_camera = self.find_CAMERA(companyTerms)
+        else:
+            new_camera = ""
 
 
 
 
 
         template = jinja_environment.get_template('companyname.html')
-        self.response.out.write(template.render(name = companyName, terms = companyTerms, audioWords = new_audio, dataWords = new_dataInfo, userWords = new_user, billingWords = new_billing))
+        self.response.out.write(template.render(name = companyName, terms = companyTerms, cameraWords = new_camera, allWords = new_all, locationWords = new_location, audioWords = new_audio, dataWords = new_dataInfo, userWords = new_user, billingWords = new_billing))
 
 
 class AboutUsHandler(webapp2.RequestHandler):
