@@ -37,7 +37,6 @@ class OutputHandler(webapp2.RequestHandler):
     #     if addButton clicked:
     #         companyname.html
     #
-
     #function to remove punctuation
     def remove_punctuation(self, value):
         result = ""
