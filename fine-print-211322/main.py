@@ -185,8 +185,8 @@ class OutputHandler(webapp2.RequestHandler):
             new_audio = "audio not checked"
 
         #data check box
-        dataCheckbox = self.request.get('otherstuff')
-        if dataCheckbox == 'otherstuffCheck':
+        dataCheckBox = self.request.get('otherstuff')
+        if dataCheckBox == 'otherstuffCheck':
             new_stuff = self.find_DATA(data)
         else:
             new_stuff = "Data not checked"
