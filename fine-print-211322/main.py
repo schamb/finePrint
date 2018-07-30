@@ -211,10 +211,17 @@ class AboutUsHandler(webapp2.RequestHandler):
         template = jinja_environment.get_template('aboutus.html')
         self.response.out.write(template.render())
 
+class TwitterHandler(webapp2.RequestHandler):
+    def get(self):
+        template = jinja_environment.get_template('twitter.html')
+        self.response.out.write(template.render())
+
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler),
     ('/addcompany', UserInput),
     ('/companyname', OutputHandler),
-    ('/aboutus', AboutUsHandler)
+    ('/aboutus', AboutUsHandler),
+    ('/twitter', TwitterHandler)
+
 ], debug=True)
