@@ -230,12 +230,19 @@ class TwitterHandler(webapp2.RequestHandler):
         template = jinja_environment.get_template('twitter.html')
         self.response.out.write(template.render())
 
+class FacebookHandler(webapp2.RequestHandler):
+    def get(self):
+        template = jinja_environment.get_template('facebook.html')
+        self.response.out.write(template.render())
+
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler),
     ('/addcompany', UserInput),
     ('/companyname', OutputHandler),
     ('/aboutus', AboutUsHandler),
-    ('/twitter', TwitterHandler)
+    ('/twitter', TwitterHandler),
+    ('/facebook', FacebookHandler)
+
 
 ], debug=True)
