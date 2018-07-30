@@ -17,11 +17,12 @@ h2{
   margin-top: 25%;
   font-family: 'Gothic A1', sans-serif;
   font-weight: lighter;
-  color: #AB9353;
+  color: #AB9353; /*text color*/
 }
 p{
   margin-top: 10%;
   font-family: 'Roboto', sans-serif;
+  color: #AB9353;
 }
 body{
   background-color: #f7f6ea;
@@ -31,7 +32,7 @@ h1{
   font-family: 'Roboto', sans-serif;
   font-size: 60px;
   font-weight: lighter;
-  color: #4D2C3D;
+  color: #4D2C3D; /*text color*/
   margin-bottom: 5%;
 
 }
