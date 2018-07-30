@@ -48,7 +48,7 @@ class OutputHandler(webapp2.RequestHandler):
         return result
 
     #funcion for DATA
-    def find_DATA(self, document):
+    def find_DATAINFO(self, document):
         #open keyTerms file
 
         keyTerms = ["data","metadata","storage","tracking","cookies","share"]
@@ -91,8 +91,8 @@ class OutputHandler(webapp2.RequestHandler):
         #open keyTerms file
         keyTerms = ["tracking", "location", "demographic"]
         newDocument = document.split(" ")
-        for x in range(len(document)):
-            word = document[x].lower()
+        for x in range(len(newDocument)):
+            word = newDocument[x].lower()
             waye = self.remove_punctuation(word)
 
             for i in range(len(keyTerms)):
@@ -183,41 +183,41 @@ class OutputHandler(webapp2.RequestHandler):
     def post(self):
         companyTerms = self.request.get('terms')
         companyName = self.request.get('name')
+        audioCheckBox = self.request.get('audioBox')
+        dataCheckbox = self.request.get('dataBox')
+        userCheckBox = self.request.get('userBox')
+        billingCheckBox = self.request.get('billingBox')
 
         #Microphone Check box
-        audioCheckBox = self.request.get('audio')
         if audioCheckBox == 'audioCheck':
             new_audio = self.find_MICROPHONE(companyTerms)
         else:
-            new_audio = "audio not checked"
+            new_audio = "Audio not checked"
 
 
         #data check box
-        dataCheckbox = self.request.get("dataBox")
-        if dataCheckbox == 'dataCheck':
-            new_data = self.find_DATA(companyTerms)
+        if dataCheckbox == 'dataInfoCheck':
+            new_dataInfo = self.find_DATAINFO(companyTerms)
         else:
-            new_data = "Data not checked"
+            new_dataInfo = "Data not checked"
         #user check box
-        userCheckBox = self.request.get("user")
         if userCheckBox == 'userCheck':
-            new_all = self.find_USER(companyTerms)
+            new_user = self.find_USER(companyTerms)
         else:
-            new_all = "User not Checked"
+            new_user = "User not Checked"
 
         #user check box
-        billingCheckBox = self.request.get("billing")
         if billingCheckBox == 'billingCheck':
-            new_billing = self.find_BILLING(data)
+            new_billing = self.find_BILLING(companyTerms)
         else:
-            new_billing = "billing not Checked"
+            new_billing = "Billing not Checked"
 
 
 
 
 
         template = jinja_environment.get_template('companyname.html')
-        self.response.out.write(template.render(name = companyName, terms = companyTerms, audioWords = new_audio, dataWords = new_data, userWords = new_all))
+        self.response.out.write(template.render(name = companyName, terms = companyTerms, audioWords = new_audio, dataWords = new_dataInfo, userWords = new_user, billingWords = new_billing))
 
 
 class AboutUsHandler(webapp2.RequestHandler):
