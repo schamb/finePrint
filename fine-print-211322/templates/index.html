@@ -64,10 +64,16 @@ body {
 
 <h2><center>Choose a Company to Analyze</center></h4>
 
-<form class="companyButtons" action="/companyName?data=" method="post">
-  <h4><center><button> Analyze Twitter »</button></center></h4>
-  <h4><center><button>Analyze Facebook »</button></center></h4>
-  <h4><center><button>Analyze Instagram »</button></center></h4>
+<form action="/twitter" method="get">
+  <h4><center><button onclick="/twitter">Analyze Twitter »</button></center></h4>
+</form>
+
+<form action="/facebook" method="get">
+  <h4><center><button onclick="/facebook">Analyze Facebook »</button></center></h4>
+</form>
+
+<form action="/instagram" method="get">
+  <h4><center><button onclick="/instagram">Analyze Instagram »</button></center></h4>
 </form>
 
 
