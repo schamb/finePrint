@@ -1,9 +1,52 @@
-h1 {
-  color: rgb(77, 44, 61); font-family: 'Roboto', sans-serif; font-size: 70px
+#coName{
+  font-size: 40px;
+  color: #4d2c3d;
+  font-family: 'Roboto', sans-serif;
+  width: 1418px;
+  height: 50px;
+}
+.column-left{
+  float: left;
+  width: 61%;
+  /* height: 565px; */
 }
 
+.column-right{
+  float: right;
+  width: 35%;
+  /* height: 565px; */
+}
+
+#tandc{
+  font-size: 16px;
+  color: #4d2c3d;
+  font-family: 'Roboto', sans-serif;
+  float: left;
+  width: 99%;
+  height: 500px;
+}
+#addButton{
+  /* float: bottom; */
+
+}
+
+::placeholder{
+  font-size:20px;
+  font-family: 'Roboto', sans-serif;
+  color: #4d2c3d;
+
+}
+
+#keyTerms{
+  float: right;
+  /* width: 100%; */
+  font-family: 'Roboto', sans-serif;
+  color: #4d2c3d;
+  margin-right: 20px;
+}
 h2 {
-  font-family: 'Roboto', sans-serif; border: 1px solid black; font-size: 35px
+  font-family: 'Roboto', sans-serif;
+  font-size: 35px;
 }
 
 
@@ -20,6 +63,7 @@ button {
   text-decoration: none;
   outline: none;
   color: #fff;
+  border: 6px solid red;
   background-color: #57652A;
   border: none;
   border-radius: 15px;
