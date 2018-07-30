@@ -61,7 +61,7 @@ h2 {
   font-size: 35px;
 }
 
-.button {
+button {
   display: inline-block;
   padding: 5px 10px;
   font-size: 20px;
@@ -81,9 +81,9 @@ h2 {
   clear: both;
   display: table;
 }
-.button:hover {background-color: #343d19}
+button:hover {background-color: #343d19}
 
-.button:active {
+button:active {
   background-color: #57652A;
   box-shadow: 0 5px #666;
   transform: translateY(4px);
