@@ -21,9 +21,9 @@
     <h2> Paste terms and conditions here</h2>
     <!-- &audioCheckBox=audio&dataCheckBox=data -->
 
-    <form action="/companyname?data=userInput" method="post">
-      <input id="companyName" type="text" class="userInput"  name="companyName" value = 'Enter Company Name Here'></input>
-      <textarea value = "Insert text" name="userInput"></textarea>
+    <form action="/companyname?companyName=name&companyTerms=terms" method="post">
+      <textarea value = "Enter Company Name" name = "name"></textarea>
+      <textarea value = "Insert text" name="terms"></textarea>
       <input  id="addButton" type="submit" value="add">
 
       <h2><center>Highlighted Words</center></h2>
