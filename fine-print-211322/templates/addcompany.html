@@ -1,4 +1,4 @@
--<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
 
@@ -16,38 +16,46 @@
       <!-- <button type="button"><a href="index.html">《 back</a></button> -->
     <button onclick="window.location.href='index.html'">« back</button>
 
-    <h1><center>Company Name</center></h1>
-
-    <h2> Paste terms and conditions here</h2>
-    <!-- &audioCheckBox=audio&dataCheckBox=data -->
-
     <form action="/companyname?companyName=name&companyTerms=terms" method="post">
-      <textarea value = "Enter Company Name" name = "name"></textarea>
-      <textarea value = "Insert text" name="terms"></textarea>
-      <input  id="addButton" type="submit" value="add">
 
-      <h2><center>Highlighted Words</center></h2>
-      <center>
-      <input type="checkbox" class="camera" name="audio" value = 'audioCheck'>Audio / Microphone</input>
-      <p></p>
-      <input type="checkbox" class="camera" name="billing" value = 'billingCheck'>Billing Information</input>
-      <p></p>
+        <center>
+          <textarea id="coName" value = "Enter Company Name" name = "name" placeholder="Enter Company Name here:"></textarea>
+        </center>
 
-      <input type="checkbox" class="camera" name="camera" value = 'cameraCheck'>Camera</input>
-      <p></p>
+        <div class = "column-left">
 
-      <input type="checkbox" class="camera" name="otherstuff" value = 'otherstuffCheck'>Data</input>
-      <p></p>
+            <textarea  id="tandc"value = "Insert text" name="terms" placeholder="Enter Privacy Policy or Terms and Conditions statements here:"></textarea>
+          <button  id="addButton" type="submit" value="add">Add</button>
+        </div>
 
-      <input type="checkbox" class="camera" name="location" value = 'locationCheck'>Location</input>
-      <p></p>
 
-      <input type="checkbox" class="camera" name="user" value = 'userCheck'>User Information</input>
-      <p></p>
 
-      <input type="checkbox" class="camera" name="all" value = 'allCheck'>All</input>
-      <p></p>
-    </center>
+        <center>
+          <div class="column-right" id="keyTerms">
+          <h2><center>What do you want to look for?</center></h2>
+          <center>
+          <input type="checkbox" class="camera" name="audio" value = 'audioCheck'>Audio / Microphone</input>
+          <p></p>
+          <input type="checkbox" class="camera" name="billing" value = 'billingCheck'>Billing Information</input>
+          <p></p>
+
+          <input type="checkbox" class="camera" name="camera" value = 'cameraCheck'>Camera</input>
+          <p></p>
+
+          <input type="checkbox" class="camera" name="otherstuff" value = 'otherstuffCheck'>Data</input>
+          <p></p>
+
+          <input type="checkbox" class="camera" name="location" value = 'locationCheck'>Location</input>
+          <p></p>
+
+          <input type="checkbox" class="camera" name="user" value = 'userCheck'>User Information</input>
+          <p></p>
+
+          <input type="checkbox" class="camera" name="all" value = 'allCheck'>All</input>
+          <p></p>
+          </center>
+        </div>
+      </center>  
     </form>
 
 
