@@ -191,22 +191,13 @@ class OutputHandler(webapp2.RequestHandler):
         else:
             new_audio = "audio not checked"
 
-<<<<<<< HEAD
+
         #data check box
         dataCheckbox = self.request.get("dataBox")
         if dataCheckbox == 'dataCheck':
             new_data = self.find_DATA(companyTerms)
         else:
             new_data = "Data not checked"
-=======
-        # #data check box
-        # dataCheckBox = self.request.get('otherstuff')
-        # if dataCheckBox == 'otherstuffCheck':
-        #     new_stuff = self.find_DATA(data)
-        # else:
-        #     new_stuff = "Data not checked"
->>>>>>> 4d5d3c0af110dddaef5aa8ed76f9a2e768f3ec46
-
         #user check box
         userCheckBox = self.request.get("user")
         if userCheckBox == 'userCheck':
@@ -226,12 +217,8 @@ class OutputHandler(webapp2.RequestHandler):
 
 
         template = jinja_environment.get_template('companyname.html')
-
-<<<<<<< HEAD
         self.response.out.write(template.render(name = companyName, terms = companyTerms, audioWords = new_audio, dataWords = new_data, userWords = new_all))
-=======
-        self.response.out.write(template.render(data = data, audioWords = new_audio, billingWords = new_billing, userWords = new_user))
->>>>>>> 4d5d3c0af110dddaef5aa8ed76f9a2e768f3ec46
+
 
 class AboutUsHandler(webapp2.RequestHandler):
     def get(self):
