@@ -103,7 +103,7 @@ class OutputHandler(webapp2.RequestHandler):
         #open keyTerms file
         keyTerms = ["billing", "sell", "selling"]
         newDocument = document.split(" ")
-        for x in range(len(document)):
+        for x in range(len(newDocument)):
             word = newDocument[x].lower()
             waye = self.remove_punctuation(word)
 
@@ -116,7 +116,7 @@ class OutputHandler(webapp2.RequestHandler):
                 if waye.strip() == keyTerm:
                     newDocument[x] = word.upper()
 
-        return " ".split(newDocument)
+        return " ".join(newDocument)
     def find_CAMERA(self, document):
         #open keyTerms file
         keyTerms = ["camera", "video", "photo"]
@@ -184,12 +184,12 @@ class OutputHandler(webapp2.RequestHandler):
         else:
             new_audio = "audio not checked"
 
-        #data check box
-        dataCheckBox = self.request.get('otherstuff')
-        if dataCheckBox == 'otherstuffCheck':
-            new_stuff = self.find_DATA(data)
-        else:
-            new_stuff = "Data not checked"
+        # #data check box
+        # dataCheckBox = self.request.get('otherstuff')
+        # if dataCheckBox == 'otherstuffCheck':
+        #     new_stuff = self.find_DATA(data)
+        # else:
+        #     new_stuff = "Data not checked"
 
         #user check box
         userCheckBox = self.request.get("user")
@@ -198,13 +198,20 @@ class OutputHandler(webapp2.RequestHandler):
         else:
             new_user = "User not Checked"
 
+        #user check box
+        billingCheckBox = self.request.get("billing")
+        if billingCheckBox == 'billingCheck':
+            new_billing = self.find_BILLING(data)
+        else:
+            new_billing = "billing not Checked"
+
 
 
 
 
         template = jinja_environment.get_template('companyname.html')
 
-        self.response.out.write(template.render(data = data, audioWords = new_audio, otherstuffWords = new_stuff, userWords = new_user))
+        self.response.out.write(template.render(data = data, audioWords = new_audio, billingWords = new_billing, userWords = new_user))
 
 class AboutUsHandler(webapp2.RequestHandler):
     def get(self):
