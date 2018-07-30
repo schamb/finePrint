@@ -235,6 +235,11 @@ class FacebookHandler(webapp2.RequestHandler):
         template = jinja_environment.get_template('facebook.html')
         self.response.out.write(template.render())
 
+class InstagramHandler(webapp2.RequestHandler):
+    def get(self):
+        template = jinja_environment.get_template('instagram.html')
+        self.response.out.write(template.render())
+
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler),
@@ -242,7 +247,9 @@ app = webapp2.WSGIApplication([
     ('/companyname', OutputHandler),
     ('/aboutus', AboutUsHandler),
     ('/twitter', TwitterHandler),
-    ('/facebook', FacebookHandler)
+    ('/facebook', FacebookHandler),
+    ('/instagram', InstagramHandler)
+
 
 
 ], debug=True)
