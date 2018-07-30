@@ -191,7 +191,7 @@ class OutputHandler(webapp2.RequestHandler):
             new_all = "User not Checked"
 
         dataCheckbox = self.request.get("dataBox")
-        if dataCheckbox == "dataCheck":
+        if dataCheckbox == 'dataCheck':
             new_data = self.find_DATA(data)
         else:
             new_data = "Data not checked"
