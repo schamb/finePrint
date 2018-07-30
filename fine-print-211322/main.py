@@ -64,7 +64,7 @@ class OutputHandler(webapp2.RequestHandler):
     def find_ALL(self, document):
         #open keyTerms file
 
-        keyTerms = ["tracking","location","demographic","billing","sell","selling","data","metadata","storage","tracking","cookies","camera","video","photo","user","contact information","microphone","audio","share","email address","phone number","collect",
+        keyTerms = ["tracking","location","demographic","billing","sell","selling","data","metadata","storage","cookies","camera","video","photo","user","contact information","microphone","audio","share","email address","phone number","collect",
         "gather","how we use", "conditions of use", "opt-out", "delete", "deactivate"]
         document = document.lower()
 
