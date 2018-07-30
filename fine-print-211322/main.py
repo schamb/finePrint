@@ -137,7 +137,7 @@ class OutputHandler(webapp2.RequestHandler):
     def find_USER(self, document):
         #open keyTerms file
 
-        keyTerms = ["user", "contact", "information", "emial", "phone", "address"]
+        keyTerms = ["user", "contact", "information", "email", "phone", "address"]
         newDocument = document.split(" ")
         for x in range(len(newDocument)):
             word = newDocument[x].lower()
@@ -183,24 +183,24 @@ class OutputHandler(webapp2.RequestHandler):
         else:
             new_audio = "audio not checked"
         #Data check box
-        allCheckBox = self.request.get("user")
-        if allCheckBox == 'userCheck':
+        userCheckBox = self.request.get("user")
+        if userCheckBox == 'userCheck':
             new_all = self.find_USER(data)
         else:
-            new_all = "All not Checked"
+            new_all = "User not Checked"
 
-        # dataCheckbox = self.request.get("dataBox")
-        # if dataCheckbox == "dataCheck":
-        #     new_data = self.find_DATA(data)
-        # else:
-        #     new_data = "Data not checked"
+        dataCheckbox = self.request.get("dataBox")
+        if dataCheckbox == 'dataCheck':
+            new_data = self.find_DATA(data)
+        else:
+            new_data = "Data not checked"
 
 
 
 
         template = jinja_environment.get_template('companyname.html')
 
-        self.response.out.write(template.render(data = data, audioWords = new_audio, allWords = new_all))
+        self.response.out.write(template.render(data = data, audioWords = new_audio, userWords = new_all, dataWords = new_data))
 
 class AboutUsHandler(webapp2.RequestHandler):
     def get(self):
