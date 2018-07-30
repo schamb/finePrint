@@ -14,7 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-import webapp2, jinja2, os, string
+import webapp2, jinja2, os, string, re
 from google.appengine.ext import ndb
 
 template_directory = os.path.join(os.path.dirname(__file__),'templates')
@@ -52,134 +52,92 @@ class OutputHandler(webapp2.RequestHandler):
         #open keyTerms file
 
         keyTerms = ["data","metadata","storage","tracking","cookies","share"]
-        newDocument = document.split(" ")
-        for x in range(len(newDocument)):
-            word = newDocument[x].lower()
-            waye = self.remove_punctuation(word)
+        document = document.lower()
 
-            for i in range(len(keyTerms)):
-                keyTerm = keyTerms[i]
-                keyTerm = keyTerm.strip()
+        for keyTerm in keyTerms:
+            for match in re.finditer(keyTerm, document):
+                start = match.start()
+                end = start + len(keyTerm)
+                document = document[:start] + document[start:end].upper() + document[end:]
 
-                if word.strip() == keyTerm:
-                    newDocument[x] = word.upper()
-                if waye.strip() == keyTerm:
-                    newDocument[x] = word.upper()
-
-        return " ".join(newDocument)
+        return document
     def find_ALL(self, document):
         #open keyTerms file
 
-        keyTerms = ["tracking","location","demographic","billing","sell","selling","data","metadata","storage","tracking","cookies","camera","video","photo","user","contact","information","microphone","audio","share","email","phone","address","collect",
+        keyTerms = ["tracking","location","demographic","billing","sell","selling","data","metadata","storage","tracking","cookies","camera","video","photo","user","contact information","microphone","audio","share","email address","phone number","collect",
         "gather","how we use", "conditions of use", "opt-out", "delete", "deactivate"]
-        newDocument = document.split(" ")
-        for x in range(len(newDocument)):
-            word = newDocument[x].lower()
-            waye = self.remove_punctuation(word)
+        document = document.lower()
 
-            for i in range(len(keyTerms)):
-                keyTerm = keyTerms[i]
-                keyTerm = keyTerm.strip()
+        for keyTerm in keyTerms:
+            for match in re.finditer(keyTerm, document):
+                start = match.start()
+                end = start + len(keyTerm)
+                document = document[:start] + document[start:end].upper() + document[end:]
 
-                if word.strip() == keyTerm:
-                    newDocument[x] = word.upper()
-                if waye.strip() == keyTerm:
-                    newDocument[x] = word.upper()
-
-        return " ".join(newDocument)
+        return document
     def find_LOCATION(self, document):
         #open keyTerms file
         keyTerms = ["tracking", "location", "demographic"]
-        newDocument = document.split(" ")
-        for x in range(len(newDocument)):
-            word = newDocument[x].lower()
-            waye = self.remove_punctuation(word)
+        document = document.lower()
 
-            for i in range(len(keyTerms)):
-                keyTerm = keyTerms[i]
-                keyTerm = keyTerm.strip()
+        for keyTerm in keyTerms:
+            for match in re.finditer(keyTerm, document):
+                start = match.start()
+                end = start + len(keyTerm)
+                document = document[:start] + document[start:end].upper() + document[end:]
 
-                if word.strip() == keyTerm:
-                    newDocument[x] = word.upper()
-                if waye.strip() == keyTerm:
-                    newDocument[x] = word.upper()
-
-        return " ".join(newDocument)
+        return document
     def find_BILLING(self, document):
         #open keyTerms file
         keyTerms = ["billing", "sell", "selling"]
-        newDocument = document.split(" ")
-        for x in range(len(newDocument)):
-            word = newDocument[x].lower()
-            waye = self.remove_punctuation(word)
+        document = document.lower()
 
-            for i in range(len(keyTerms)):
-                keyTerm = keyTerms[i]
-                keyTerm = keyTerm.strip()
+        for keyTerm in keyTerms:
+            for match in re.finditer(keyTerm, document):
+                start = match.start()
+                end = start + len(keyTerm)
+                document = document[:start] + document[start:end].upper() + document[end:]
 
-                if word.strip() == keyTerm:
-                    newDocument[x] = word.upper()
-                if waye.strip() == keyTerm:
-                    newDocument[x] = word.upper()
-
-        return " ".join(newDocument)
+        return document
     def find_CAMERA(self, document):
         #open keyTerms file
         keyTerms = ["camera", "video", "photo"]
-        newDocument = document.split(" ")
-        for x in range(len(newDocument)):
-            word = newDocument[x].lower()
-            waye = self.remove_punctuation(word)
+        document = document.lower()
 
-            for i in range(len(keyTerms)):
-                keyTerm = keyTerms[i]
-                keyTerm = keyTerm.strip()
+        for keyTerm in keyTerms:
+            for match in re.finditer(keyTerm, document):
+                start = match.start()
+                end = start + len(keyTerm)
+                document = document[:start] + document[start:end].upper() + document[end:]
 
-                if word.strip() == keyTerm:
-                    newDocument[x] = word.upper()
-                if waye.strip() == keyTerm:
-                    newDocument[x] = word.upper()
-
-        return " ".join(newDocument)
+        return document
     def find_USER(self, document):
         #open keyTerms file
 
-        keyTerms = ["user", "contact", "information", "email", "phone", "address"]
-        newDocument = document.split(" ")
-        for x in range(len(newDocument)):
-            word = newDocument[x].lower()
-            waye = self.remove_punctuation(word)
+        keyTerms = ["user","user information", "contact information", "email adress", "phone number", "address"]
+        document = document.lower()
 
-            for i in range(len(keyTerms)):
-                keyTerm = keyTerms[i]
-                keyTerm = keyTerm.strip()
-
-                if word.strip() == keyTerm:
-                    newDocument[x] = word.upper()
-                if waye.strip() == keyTerm:
-                    newDocument[x] = word.upper()
+        for keyTerm in keyTerms:
+            for match in re.finditer(keyTerm, document):
+                start = match.start()
+                end = start + len(keyTerm)
+                document = document[:start] + document[start:end].upper() + document[end:]
 
 
-        return " ".join(newDocument)
+        return document
     def find_MICROPHONE(self, document):
         #open keyTerms file
 
         keyTerms = ["microphone", "audio"]
-        newDocument = document.split(" ")
-        for x in range(len(newDocument)):
-            word = newDocument[x].lower()
-            waye = self.remove_punctuation(word)
+        document = document.lower()
 
-            for i in range(len(keyTerms)):
-                keyTerm = keyTerms[i]
-                keyTerm = keyTerm.strip()
+        for keyTerm in keyTerms:
+            for match in re.finditer(keyTerm, document):
+                start = match.start()
+                end = start + len(keyTerm)
+                document = document[:start] + document[start:end].upper() + document[end:]
 
-                if word.strip() == keyTerm:
-                    newDocument[x] = word.upper()
-                if waye.strip() == keyTerm:
-                    newDocument[x] = word.upper()
-
-        return " ".join(newDocument)
+        return document
     def post(self):
         companyTerms = self.request.get('terms')
         companyName = self.request.get('name')
@@ -189,25 +147,25 @@ class OutputHandler(webapp2.RequestHandler):
         billingCheckBox = self.request.get('billingBox')
 
         #Microphone Check box
-        if audioCheckBox == 'audioCheck':
+        if audioCheckBox:
             new_audio = self.find_MICROPHONE(companyTerms)
         else:
             new_audio = "Audio not checked"
 
 
         #data check box
-        if dataCheckbox == 'dataInfoCheck':
+        if dataCheckbox:
             new_dataInfo = self.find_DATAINFO(companyTerms)
         else:
             new_dataInfo = "Data not checked"
         #user check box
-        if userCheckBox == 'userCheck':
+        if userCheckBox:
             new_user = self.find_USER(companyTerms)
         else:
             new_user = "User not Checked"
 
         #user check box
-        if billingCheckBox == 'billingCheck':
+        if billingCheckBox:
             new_billing = self.find_BILLING(companyTerms)
         else:
             new_billing = "Billing not Checked"
