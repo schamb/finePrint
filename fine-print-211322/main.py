@@ -50,7 +50,7 @@ class OutputHandler(webapp2.RequestHandler):
     def find_DATAINFO(self, document):
         #open keyTerms file
 
-        keyTerms = ["data","metadata","storage","tracking","cookies","share"]
+        keyTerms = ["metadata","data","storage","tracking","cookies","share"]
         document = document.lower()
 
         for keyTerm in keyTerms:
@@ -63,7 +63,7 @@ class OutputHandler(webapp2.RequestHandler):
     def find_ALL(self, document):
         #open keyTerms file
 
-        keyTerms = ["tracking","location","demographic","billing","sell","selling","data","metadata","storage","cookies","camera","video","photo","user","contact information","microphone","audio","share","email address","phone number","collect",
+        keyTerms = ["tracking","location","demographic","billing","selling","sell","metadata","data","storage","cookies","camera","video","photo","user","contact information","microphone","audio","share","email address","phone number","collect",
         "gather","how we use", "conditions of use", "opt-out", "delete", "deactivate"]
         document = document.lower()
 
@@ -88,7 +88,7 @@ class OutputHandler(webapp2.RequestHandler):
         return document
     def find_BILLING(self, document):
         #open keyTerms file
-        keyTerms = ["billing", "sell", "selling"]
+        keyTerms = ["billing", "selling", "sell"]
         document = document.lower()
 
         for keyTerm in keyTerms:

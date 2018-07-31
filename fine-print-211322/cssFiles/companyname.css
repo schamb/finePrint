@@ -107,7 +107,10 @@ textarea{
 .highlight {
   background-color: #ef99da;
   border-radius: 5px;
+  font-size: 18px;
+  font-family: 'Roboto', sans-serif;
 }
+
 .columntwitter {
     float: left;
     width: 71.85%;

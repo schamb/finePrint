@@ -77,27 +77,31 @@
       <p id="audioHighlight"></p>
       <p id="dataHighlight"></p>
       <p id="userHighlight"></p>
+      <p id="billingHighlight"></p>
+      <p id="locationHighlight"></p>
+      <p id="allHighlight"></p>
+      <p id="cameraHighlight"></p>
       <script>
           // variables for user input (text)
-          var audioString = " {{ audioWords }}";
-          var dataString = " {{ dataWords }}";
-          var userString = " {{ userWords }}";
+          var audioString = "{{ audioWords }}";
+          var dataString = "{{ dataWords }}";
+          var userString = "{{ userWords }}";
+          var billingString = "{{ billingWords }}";
+          var locationString = "{{ locationWords }}";
+          var allString = "{{ allWords }}";
+          var cameraString = "{{ cameraWords }}";
           // function for highlighting text
           function findUppercase(string){
             // alert("I'm at the start of the function");
             var list = string.split(" ");
             var i;
-            for (i = list.length - 1; i >= 0; i--){
+            for (i = list.length - 2; i >= 0; i--){
               var upperWord = list[i].toUpperCase();
               var listWord = list[i];
               if (listWord == upperWord){
-                // list[i] = "~HIGHLIGHT~";
                 // alert("match: " + list[i]);
-                // list[i] = listWord.fontcolor('red');
-                // list = list.splice(i, 0, "hi");
+                list[i] = "<span class='highlight'>" + listWord + "</span>";
                 list[i] = list[i].toLowerCase();
-                list[i + 1] = "</span>";
-                list[i - 1] = "<span class='highlight'>";
 
               }
             }
@@ -107,10 +111,25 @@
           audioString = findUppercase(audioString);
           dataString = findUppercase(dataString);
           userString = findUppercase(userString);
+          billingString = findUppercase(billingString);
+          locationString = findUppercase(locationString);
+          allString = findUppercase(allString);
+          cameraString = findUppercase(cameraString);
 
-          document.getElementById("audioHighlight").innerHTML = audioString;
-          document.getElementById("dataHighlight").innerHTML = dataString;
-          document.getElementById("userHighlight").innerHTML = userString;
+          // document.getElementById("audioHighlight").innerHTML = audioString;
+          // document.getElementById("dataHighlight").innerHTML = dataString;
+          // document.getElementById("userHighlight").innerHTML = userString;
+          // document.getElementById("billingHighlight").innerHTML = billingString;
+          // document.getElementById("locationHighlight").innerHTML = locationString;
+          // document.getElementById("allHighlight").innerHTML = allString;
+          // document.getElementById("cameraHighlight").innerHTML = cameraString;
+          document.getElementById("audioInputText").innerHTML = audioString;
+          document.getElementById("dataInputText").innerHTML = dataString;
+          document.getElementById("userInputText").innerHTML = userString;
+          document.getElementById("billingInputText").innerHTML = billingString;
+          document.getElementById("locationInputText").innerHTML = locationString;
+          document.getElementById("allInputText").innerHTML = allString;
+          document.getElementById("cameraInputText").innerHTML = cameraString;
       </script>
     <dl><center>
 </dl></center>
