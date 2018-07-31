@@ -9,7 +9,12 @@
     height: 1000010000px;
     padding: 10px;
 }
+.column-right{
+  font-size: 20px;
+  font-family: 'Roboto', sans-serif;
+  color: #4d2c3d
 
+}
 /* Clear floats after the columns */
 .row:after {
     content: "";
