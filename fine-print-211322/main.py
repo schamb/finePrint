@@ -113,7 +113,7 @@ class OutputHandler(webapp2.RequestHandler):
     def find_USER(self, document):
         #open keyTerms file
 
-        keyTerms = ["user","user information", "contact information", "email adress", "phone number", "address"]
+        keyTerms = ["user","user information", "contact information", "email address", "phone number", "address", "email"]
         document = document.lower()
 
         for keyTerm in keyTerms:
