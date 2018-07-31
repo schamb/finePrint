@@ -7,19 +7,116 @@
   </head>
   <link href="https://fonts.googleapis.com/css?family=Roboto:100" rel="stylesheet">
   <body>
+    <form action="/" method="get">
+      <button onclick="/">《  Back</button>
+    </form>
 
     <br>
+    
     <center><h1>Twitter</h1></center>
 
     <div class="row">
   <div class="highc" style="background-color: #f7f6ea;">
-    <h2><center>Highlighted Words</h2></center>
+    <h2><center>What do you want to look for?</h2></center>
+<form action="/twitter?submitButton=submit" method="post" >
 
+      <center>
+      <input type="checkbox" class="camera" name="audio">Audio / Microphone</input>
+      <p></p>
+      <input type="checkbox" class="camera" name="billing">Billing Information</input>
+      <p></p>
+
+      <input type="checkbox" class="camera" name="camera">Camera</input>
+      <p></p>
+
+  <input type="checkbox" class="camera" name="dataInfo">Data</input>
+  <p></p>
+
+  <input type="checkbox" class="camera" name="location">Location</input>
+  <p></p>
+
+  <input type="checkbox" class="camera" name="user">User Information</input>
+  <p></p>
+
+  <input type="checkbox" class="camera" name="all">All</input>
+  <p></p>
+
+  <button  id="addButton" type="submit" value="add">Add »</button>
+
+</center>
+</form>
+<p class="terms">
+  <center><p id="audioInputText"> {{ audioWords }} </p></center>
+  <center><p id="dataInputText"> {{ dataWords }} </p></center>
+  <center><p id="userInputText"> {{ userWords }} </p></center>
+  <center><p id="billingInputText"> {{ billingWords }} </p></center>
+  <center><p id="cameraInputText"> {{ cameraWords }} </p></center>
+  <center><p id="allInputText"> {{ allWords }} </p></center>
+  <center><p id="locationInputText"> {{ locationWords }} </p></center>
+  </center>
+  <p id="audioHighlight"></p>
+  <p id="dataHighlight"></p>
+  <p id="userHighlight"></p>
+  <p id="billingHighlight"></p>
+  <p id="locationHighlight"></p>
+  <p id="allHighlight"></p>
+  <p id="cameraHighlight"></p>
+  <script>
+      // variables for user input (text)
+      var audioString = "{{ audioWords }}";
+      var dataString = "{{ dataWords }}";
+      var userString = "{{ userWords }}";
+      var billingString = "{{ billingWords }}";
+      var locationString = "{{ locationWords }}";
+      var allString = "{{ allWords }}";
+      var cameraString = "{{ cameraWords }}";
+      // function for highlighting text
+      function findUppercase(string){
+        // alert("I'm at the start of the function");
+        var list = string.split(" ");
+        var i;
+        for (i = list.length - 2; i >= 0; i--){
+          var upperWord = list[i].toUpperCase();
+          var listWord = list[i];
+          if (listWord == upperWord){
+            // alert("match: " + list[i]);
+            list[i] = "<span class='highlight'>" + listWord + "</span>";
+            list[i] = list[i].toLowerCase();
+
+          }
+        }
+        return list.join(" ");
+      }
+      // reassign variables with highlighted text
+      audioString = findUppercase(audioString);
+      dataString = findUppercase(dataString);
+      userString = findUppercase(userString);
+      billingString = findUppercase(billingString);
+      locationString = findUppercase(locationString);
+      allString = findUppercase(allString);
+      cameraString = findUppercase(cameraString);
+
+      // document.getElementById("audioHighlight").innerHTML = audioString;
+      // document.getElementById("dataHighlight").innerHTML = dataString;
+      // document.getElementById("userHighlight").innerHTML = userString;
+      // document.getElementById("billingHighlight").innerHTML = billingString;
+      // document.getElementById("locationHighlight").innerHTML = locationString;
+      // document.getElementById("allHighlight").innerHTML = allString;
+      // document.getElementById("cameraHighlight").innerHTML = cameraString;
+      document.getElementById("audioInputText").innerHTML = audioString;
+      document.getElementById("dataInputText").innerHTML = dataString;
+      document.getElementById("userInputText").innerHTML = userString;
+      document.getElementById("billingInputText").innerHTML = billingString;
+      document.getElementById("locationInputText").innerHTML = locationString;
+      document.getElementById("allInputText").innerHTML = allString;
+      document.getElementById("cameraInputText").innerHTML = cameraString;
+  </script>
   </dl>
     </div>
     <div class="columntwitter" style="background-color: white;">
 
       <center><h2>Terms and Conditions</h2></center>
+      <div id="twitterText">
       <p><center>You may use the Services only if you agree to form a binding contract with Twitter and are not a person barred from receiving services under the laws of the applicable jurisdiction. In any case, you must be at least 13 years old, or in the case of Periscope 16 years old, to use the Services. If you are accepting these Terms and using the Services on behalf of a company, organization, government, or other legal entity, you represent and warrant that you are authorized to do so and have the authority to bind such entity to these Terms, in which case the words “you” and “your” as used in these Terms shall refer to such entity.</center></p>
       <p><center>You are responsible for your use of the Services and for any Content you provide, including compliance with applicable laws, rules, and regulations. You should only provide Content that you are comfortable sharing with others. Any use or reliance on any Content or materials posted via the Services or obtained by you through the Services is at your own risk. We do not endorse, support, represent or guarantee the completeness, truthfulness, accuracy, or reliability of any Content or communications posted via the Services or endorse any opinions expressed via the Services. You understand that by using the Services, you may be exposed to Content that might be offensive, harmful, inaccurate or otherwise inappropriate, or in some cases, postings that have been mislabeled or are otherwise deceptive. All Content is the sole responsibility of the person who originated such Content. We may not monitor or control the Content posted via the Services and, we cannot take responsibility for such Content. We reserve the right to remove Content that violates the User Agreement, including for example, copyright or trademark violations, impersonation, unlawful conduct, or harassment.
       </p></center>
@@ -36,6 +133,9 @@
       </p></center>
       <p><center>You may end your legal agreement with Twitter at any time by deactivating your accounts and discontinuing your use of the Services.We may suspend or terminate your account or cease providing you with all or part of the Services at any time for any or no reason, including, but not limited to, if we reasonably believe: (i) you have violated these Terms or the Twitter Rules or Periscope Community Guidelines, (ii) you create risk or possible legal exposure for us; (iii) your account should be removed due to prolonged inactivity; or (iv) our provision of the Services to you is no longer commercially viable. We will make reasonable efforts to notify you by the email address associated with your account or the next time you attempt to access your account, depending on the circumstances.
       </p></center>
+    </div>
+
+<!-- DELETED FORM END TAG FROM HERE  -->
 
 
 
