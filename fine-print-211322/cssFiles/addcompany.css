@@ -1,12 +1,14 @@
 #coName{
   font-size: 40px;
-  color: #4d2c3d;
+  color: black;
   font-family: 'Roboto', sans-serif;
+  background-color: white;
   text-align: center;
   width: 1418px;
   height: 50px;
   border-radius: 5px;
-  border-style: none;
+  border-color: white;
+
 }
 .column-left{
   float: left;
@@ -23,13 +25,13 @@
 #tandc{
   font-size: 16px;
   border-radius: 5px;
-  color: #4d2c3d;
-  background-color: #f4f4e6;
+  color: black;
+  background-color: white;
   font-family: 'Roboto', sans-serif;
   float: left;
   width: 99%;
   height: 500px;
-  border-color: #e2e2b7;
+  border-color: white;
 }
 #addButton{
   /* float: bottom; */
@@ -39,7 +41,7 @@
 ::placeholder{
   font-size:20px;
   font-family: 'Roboto', sans-serif;
-  color: #4d2c3d;
+  color: black;
 
 }
 
@@ -48,7 +50,7 @@
   /* width: 100%; */
   font-size: 20px;
   font-family: 'Roboto', sans-serif;
-  color: #57652A;
+  color: black;
   margin-right: 20px;
 }
 h2 {
