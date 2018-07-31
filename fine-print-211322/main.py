@@ -63,8 +63,8 @@ class OutputHandler(webapp2.RequestHandler):
     def find_ALL(self, document):
         #open keyTerms file
 
-        keyTerms = ["tracking","location","demographic","billing","selling","sell","metadata","data","storage","cookies","camera","video","photo","user","contact information","microphone","audio","share","email address","phone number","collect",
-        "gather","how we use", "conditions of use", "opt-out", "delete", "deactivate"]
+        keyTerms = ["tracking","location","demographic","billing","selling","sell","metadata","data","storage","cookies","camera","video","photo","users","user","contact information","microphone","audio","share","email address","phone number","collected", "collects","collect",
+        "gather","how we use", "conditions of use", "opt-out", "delete", "deactivates","deactivate", "third-party"]
         document = document.lower()
 
         for keyTerm in keyTerms:
@@ -113,7 +113,7 @@ class OutputHandler(webapp2.RequestHandler):
     def find_USER(self, document):
         #open keyTerms file
 
-        keyTerms = ["user","user information", "contact information", "email address", "phone number", "address", "email"]
+        keyTerms = ["users", "user","user information", "contact information", "email address", "email", "phone number", "address"]
         document = document.lower()
 
         for keyTerm in keyTerms:
@@ -153,37 +153,58 @@ class OutputHandler(webapp2.RequestHandler):
         #Microphone Check box
         if audioCheckBox:
             new_audio = self.find_MICROPHONE(companyTerms)
+            new_audio = new_audio.replace('"', '')
+            new_audio = new_audio.replace('"', '')
+            new_audio = new_audio.replace('\r\n', '')
         else:
             new_audio = ""
         #data check box
         if dataCheckbox:
             new_dataInfo = self.find_DATAINFO(companyTerms)
+            new_dataInfo = new_dataInfo.replace('"', '')
+            new_dataInfo = new_dataInfo.replace('"', '')
+            new_dataInfo = new_dataInfo.replace('\r\n', '')
         else:
             new_dataInfo = ""
         #user check box
         if userCheckBox:
             new_user = self.find_USER(companyTerms)
+            new_user = new_user.replace('"', '')
+            new_user = new_user.replace('"', '')
+            new_user = new_user.replace('\r\n', '')
         else:
             new_user = ""
 
         #billing check box
         if billingCheckBox:
             new_billing = self.find_BILLING(companyTerms)
+            new_billing = new_billing.replace('"', '')
+            new_billing = new_billing.replace('"', '')
+            new_billing = new_billing.replace('\r\n', '')
         else:
             new_billing = ""
         #all check box
         if allCheckBox:
             new_all = self.find_ALL(companyTerms)
+            new_all = new_all.replace('"', '')
+            new_all = new_all.replace('"', '')
+            new_all = new_all.replace('\r\n', '')
         else:
             new_all = ""
         #location check box
         if locationCheckBox:
             new_location = self.find_LOCATION(companyTerms)
+            new_location = new_location.replace('"', '')
+            new_location = new_location.replace('"', '')
+            new_location = new_location.replace('\r\n', '')
         else:
             new_location = ""
         #camera check box
         if cameraCheckBox:
             new_camera = self.find_CAMERA(companyTerms)
+            new_camera = new_camera.replace('"', '')
+            new_camera = new_camera.replace('"', '')
+            new_camera = new_camera.replace('\r\n', '')
         else:
             new_camera = ""
 
