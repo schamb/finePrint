@@ -7,13 +7,38 @@
   </head>
   <link href="https://fonts.googleapis.com/css?family=Roboto:100" rel="stylesheet">
   <body>
-
+    <form action="/" method="get">
+      <button onclick="/">《  Back</button>
+    </form>
     <br>
     <center><h1>Facebook</h1></center>
 
     <div class="row">
-  <div class="highc" style="background-color: #f7f6ea;">
-    <h2><center>Highlighted Words</h2></center>
+    <div class="highc" style="background-color: #f7f6ea;">
+      <h2><center>What do you want to look for?</h2></center>
+    <form action="/facebook?submitButton=submit" method="post" >
+
+        <center>
+        <input type="checkbox" class="camera" name="audio">Audio / Microphone</input>
+        <p></p>
+        <input type="checkbox" class="camera" name="billing">Billing Information</input>
+        <p></p>
+
+        <input type="checkbox" class="camera" name="camera">Camera</input>
+        <p></p>
+
+    <input type="checkbox" class="camera" name="dataInfo">Data</input>
+    <p></p>
+
+    <input type="checkbox" class="camera" name="location">Location</input>
+    <p></p>
+
+    <input type="checkbox" class="camera" name="user">User Information</input>
+    <p></p>
+
+    <input type="checkbox" class="camera" name="all">All</input>
+    <p></p>
+    <button  id="addButton" type="submit" value="add">Add »</button>
 
   </dl>
     </div>
