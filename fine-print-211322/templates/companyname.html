@@ -86,13 +86,19 @@
       <p id="cameraHighlight"></p> -->
       <script>
           // variables for user input (text)
-          var audioString = " {{ audioWords }}";
-          var dataString = " {{ dataWords }}";
-          var userString = " {{ userWords }}";
-          var billingString = " {{ billingWords }}";
-          var locationString = " {{ locationWords }}";
-          var allString = " {{ allWords }}";
-          var cameraString = " {{ cameraWords }}";
+
+          //AUDIO
+          var audioString = "{{ audioWords }}";
+          // var audioPunctuationless = audioString.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g,"");
+          // audioString = audioPunctuationless.replace(/\s{2,}/g," ");
+          //DATA
+          var dataString = "{{ dataWords }}";
+          //USER
+          var userString = "{{ userWords }}";
+          var billingString = "{{ billingWords }}";
+          var locationString = "{{ locationWords }}";
+          var allString = "{{ allWords }}";
+          var cameraString = "{{ cameraWords }}";
 
           // function for highlighting text
           function findUppercase(string){
@@ -110,6 +116,8 @@
                 list[i] = "<span class='highlight'>" + list[i] + "</span>";
 
 
+              }else{
+                list[i] = list[i].toLowerCase();
               }
             }
             return list.join(" ");
