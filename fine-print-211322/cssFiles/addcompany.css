@@ -1,6 +1,6 @@
 #coName{
   font-size: 40px;
-  color: black;
+  color: #4d2c3d;
   font-family: 'Roboto', sans-serif;
   background-color: white;
   text-align: center;
@@ -25,7 +25,7 @@
 #tandc{
   font-size: 16px;
   border-radius: 5px;
-  color: black;
+  color: #4d2c3d;
   background-color: white;
   font-family: 'Roboto', sans-serif;
   float: left;
@@ -41,7 +41,7 @@
 ::placeholder{
   font-size:20px;
   font-family: 'Roboto', sans-serif;
-  color: black;
+  color: #4d2c3d;
 
 }
 
@@ -50,7 +50,7 @@
   /* width: 100%; */
   font-size: 20px;
   font-family: 'Roboto', sans-serif;
-  color: black;
+  color: #2A210B;
   margin-right: 20px;
 }
 h2 {
