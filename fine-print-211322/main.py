@@ -200,9 +200,160 @@ class AboutUsHandler(webapp2.RequestHandler):
         self.response.out.write(template.render())
 
 class TwitterHandler(webapp2.RequestHandler):
-    def get(self):
-        template = jinja_environment.get_template('twitter.html')
-        self.response.out.write(template.render())
+    def remove_punctuation(self, value):
+            result = ""
+            for c in value:
+                # If char is not punctuation, add it to the result.
+                if c not in string.punctuation:
+                    result += c
+            return result
+
+    #     #funcion for DATA
+    def find_DATAINFO(self, document):
+            #open keyTerms file
+
+            keyTerms = ["data","metadata","storage","tracking","cookies","share"]
+            document = document.lower()
+
+            for keyTerm in keyTerms:
+                for match in re.finditer(keyTerm, document):
+                    start = match.start()
+                    end = start + len(keyTerm)
+                    document = document[:start] + document[start:end].upper() + document[end:]
+
+            return document
+    def find_ALL(self, document):
+            #open keyTerms file
+
+            keyTerms = ["tracking","location","demographic","billing","sell","selling","data","metadata","storage","cookies","camera","video","photo","user","contact information","microphone","audio","share","email address","phone number","collect",
+            "gather","how we use", "conditions of use", "opt-out", "delete", "deactivate"]
+            document = document.lower()
+
+            for keyTerm in keyTerms:
+                for match in re.finditer(keyTerm, document):
+                    start = match.start()
+                    end = start + len(keyTerm)
+                    document = document[:start] + document[start:end].upper() + document[end:]
+
+            return document
+    def find_LOCATION(self, document):
+            #open keyTerms file
+            keyTerms = ["tracking", "location", "demographic"]
+            document = document.lower()
+
+            for keyTerm in keyTerms:
+                for match in re.finditer(keyTerm, document):
+                    start = match.start()
+                    end = start + len(keyTerm)
+                    document = document[:start] + document[start:end].upper() + document[end:]
+
+            return document
+    def find_BILLING(self, document):
+            #open keyTerms file
+            keyTerms = ["billing", "sell", "selling"]
+            document = document.lower()
+
+            for keyTerm in keyTerms:
+                for match in re.finditer(keyTerm, document):
+                    start = match.start()
+                    end = start + len(keyTerm)
+                    document = document[:start] + document[start:end].upper() + document[end:]
+
+            return document
+    def find_CAMERA(self, document):
+            #open keyTerms file
+            keyTerms = ["camera", "video", "photo"]
+            document = document.lower()
+
+            for keyTerm in keyTerms:
+                for match in re.finditer(keyTerm, document):
+                    start = match.start()
+                    end = start + len(keyTerm)
+                    document = document[:start] + document[start:end].upper() + document[end:]
+
+            return document
+    def find_USER(self, document):
+            #open keyTerms file
+
+            keyTerms = ["user","user information", "contact information", "email address", "phone number", "address", "email"]
+            document = document.lower()
+
+            for keyTerm in keyTerms:
+                for match in re.finditer(keyTerm, document):
+                    start = match.start()
+                    end = start + len(keyTerm)
+                    document = document[:start] + document[start:end].upper() + document[end:]
+
+
+            return document
+    def find_MICROPHONE(self, document):
+            #open keyTerms file
+
+            keyTerms = ["microphone", "audio"]
+            document = document.lower()
+
+            for keyTerm in keyTerms:
+                for match in re.finditer(keyTerm, document):
+                    start = match.start()
+                    end = start + len(keyTerm)
+                    document = document[:start] + document[start:end].upper() + document[end:]
+
+            return document
+    def post(self):
+            audioCheckBox = self.request.get('audio')
+            dataCheckbox = self.request.get('dataInfo')
+            userCheckBox = self.request.get('user')
+            billingCheckBox = self.request.get('billing')
+            allCheckBox = self.request.get('all')
+            cameraCheckBox = self.request.get('camera')
+            locationCheckBox = self.request.get('location')
+            # self.request.get_all('allCheckboxes')
+
+            #Microphone Check box
+            if audioCheckBox:
+                new_audio = self.find_MICROPHONE(companyTerms)
+            else:
+                new_audio = ""
+            #data check box
+            if dataCheckbox:
+                new_dataInfo = self.find_DATAINFO(companyTerms)
+            else:
+                new_dataInfo = ""
+            #user check box
+            if userCheckBox:
+                new_user = self.find_USER(companyTerms)
+            else:
+                new_user = ""
+
+            #billing check box
+            if billingCheckBox:
+                new_billing = self.find_BILLING(companyTerms)
+            else:
+                new_billing = ""
+            #all check box
+            if allCheckBox:
+                new_all = self.find_ALL(companyTerms)
+            else:
+                new_all = ""
+            #location check box
+            if locationCheckBox:
+                new_location = self.find_LOCATION(companyTerms)
+            else:
+                new_location = ""
+            #camera check box
+            if cameraCheckBox:
+                new_camera = self.find_CAMERA(companyTerms)
+            else:
+                new_camera = ""
+
+
+
+
+
+            template = jinja_environment.get_template('companyname.html')
+            self.response.out.write(template.render(cameraWords = new_camera, allWords = new_all, locationWords = new_location, audioWords = new_audio, dataWords = new_dataInfo, userWords = new_user, billingWords = new_billing))
+
+
 
 class FacebookHandler(webapp2.RequestHandler):
     def get(self):
@@ -223,7 +374,5 @@ app = webapp2.WSGIApplication([
     ('/twitter', TwitterHandler),
     ('/facebook', FacebookHandler),
     ('/instagram', InstagramHandler)
-
-
 
 ], debug=True)

@@ -27,6 +27,7 @@ body {
   border: 1px solid black;
   font-size: 25px;
 
+
 }
 
 .highc {
@@ -103,7 +104,7 @@ textarea{
   border-radius: 5px;
 }
 .columntwitter {
-    float: left;
+    float: right;
     width: 71.85%;
     height: 1000010000px;
     padding: 10px;
