@@ -98,6 +98,7 @@ input{
 #inputText{
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
+  font-size: 20px;
 }
 
 textarea{
@@ -105,10 +106,10 @@ textarea{
   height: 400px;
 }
 .highlight {
-  background-color: #ef99da;
   border-radius: 5px;
   font-size: 18px;
   font-family: 'Roboto', sans-serif;
+  background-color: #c5a7ef;
 }
 
 .columntwitter {
