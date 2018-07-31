@@ -188,7 +188,7 @@ class OutputHandler(webapp2.RequestHandler):
             new_all = self.find_ALL(companyTerms)
             new_all = new_all.replace('"', '')
             new_all = new_all.replace('"', '')
-            new_all = new_all.replace('\r\n', '')
+            new_all = new_all.replace('\r\n', ' ')
         else:
             new_all = ""
         #location check box
