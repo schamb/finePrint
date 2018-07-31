@@ -42,3 +42,14 @@ a{
   color: white;
   text-decoration: none;
 }
+
+h3{
+  font-family: 'Roboto', sans-serif;
+  font-weight: lighter;
+  font-size: 30px;
+  color: #155765;
+  margin-left: 15%;
+  margin-right: 15%;
+  margin-bottom: 20px;
+  margin-top: 10px;
+}
