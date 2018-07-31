@@ -147,6 +147,7 @@ class OutputHandler(webapp2.RequestHandler):
         allCheckBox = self.request.get('all')
         cameraCheckBox = self.request.get('camera')
         locationCheckBox = self.request.get('location')
+        color = self.request.get('color')
         # self.request.get_all('allCheckboxes')
 
         #Microphone Check box
@@ -191,7 +192,7 @@ class OutputHandler(webapp2.RequestHandler):
 
 
         template = jinja_environment.get_template('companyname.html')
-        self.response.out.write(template.render(name = companyName, terms = companyTerms, cameraWords = new_camera, allWords = new_all, locationWords = new_location, audioWords = new_audio, dataWords = new_dataInfo, userWords = new_user, billingWords = new_billing))
+        self.response.out.write(template.render(name = companyName, terms = companyTerms, cameraWords = new_camera, allWords = new_all, locationWords = new_location, audioWords = new_audio, dataWords = new_dataInfo, userWords = new_user, billingWords = new_billing, highlightColor = color))
 
 
 class AboutUsHandler(webapp2.RequestHandler):
