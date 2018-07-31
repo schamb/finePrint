@@ -27,8 +27,8 @@
 
         <div class = "column-left">
 
-            <textarea  id="tandc" onkeyup="checkInput()" value = "Insert text" name="terms" placeholder="Enter Privacy Policy or Terms and Conditions statements here:"></textarea>
-          <button  id="addButton" type="submit" value="add" disabled>Add »</button>
+            <textarea  id="tandc" value = "Insert text" name="terms" placeholder="Enter Privacy Policy or Terms and Conditions statements here:"required></textarea>
+          <button  id="addButton" type="submit" value="add">Add »</button>
         </div>
 
 
@@ -59,17 +59,6 @@
     </center>
     </form>
 
-<script>
-function checkInput(){
-  if(document.getElementById("tandc").value =="")
-  {
-      document.getElementById("addButton").disabled = true;
-      alert("Please enter something in the Terms and Conditions box");
-   }else{
-      document.getElementById("addButton").disabled = false;
-   }
-}
-</script>
 
 
 
