@@ -14,7 +14,7 @@ h2{
   color: #AB9353;
   margin-left: 15%;
   margin-right: 15%;
-  margin-bottom: 5%;
+  margin-bottom: 28px;
 }
 
 button{
@@ -28,6 +28,7 @@ button{
     font-size: 15px;
     border-radius: 15px;
     font-family: 'Roboto', sans-serif;
+    margin-bottom: 28px;
 }
 button:hover{
   background-color: #2A210B;
