@@ -41,6 +41,7 @@
       <script>
           // variables for user input (text)
           var audioString = " {{ audioWords }}";
+          // audioString = audioString.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g,"");
           var dataString = " {{ dataWords }}";
           var userString = " {{ userWords }}";
           // function for highlighting text
@@ -56,9 +57,10 @@
                 // alert("match: " + list[i]);
                 // list[i] = listWord.fontcolor('red');
                 // list = list.splice(i, 0, "hi");
+                // list[i] = list[i].replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g,"");
                 list[i] = list[i].toLowerCase();
-                list[i + 1] = "</span>";
-                list[i - 1] = "<span class='highlight'>";
+                // list[i + 1] = "</span>";
+                // list[i - 1] = "<span class='highlight'>";
 
               }
             }
