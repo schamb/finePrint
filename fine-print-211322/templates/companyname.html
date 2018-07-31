@@ -86,22 +86,22 @@
           var audioString = " {{ audioWords }}";
           var dataString = " {{ dataWords }}";
           var userString = " {{ userWords }}";
-          var billingString = "{{ billingWords }}";
-          var locationString = "{{ locationWords }}";
-          var allString = "{{ allWords }}";
-          var cameraString = "{{ cameraWords }}";
+          var billingString = " {{ billingWords }}";
+          var locationString = " {{ locationWords }}";
+          var allString = " {{ allWords }}";
+          var cameraString = " {{ cameraWords }}";
           // function for highlighting text
           function findUppercase(string){
-            alert("I'm at the start of the function");
+            // alert("I'm at the start of the function");
             var list = string.split(" ");
             var i;
             for (i = list.length - 1; i >= 0; i--){
-              alert("I'm in the for loop");
+              // alert("I'm in the for loop");
               var upperWord = list[i].toUpperCase();
               var listWord = list[i];
-              alert(listWord + " --> " + upperWord);
+              // alert(listWord + " --> " + upperWord);
               if (listWord == upperWord){
-                alert("match: " + list[i]);
+                // alert("match: " + list[i]);
                 list[i] = list[i].toLowerCase();
                 list[i] = "<span class='highlight'>" + list[i] + "</span>";
 
