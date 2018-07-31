@@ -103,7 +103,10 @@ textarea{
   width: 400px;
   height: 400px;
 }
-
+.highlight {
+  background-color: #ef99da;
+  border-radius: 5px;
+}
 .columntwitter {
     float: left;
     width: 71.85%;

@@ -34,7 +34,7 @@
 
     <div class="row">
   <div class="highc" style="background-color: #f7f6ea;">
-  <h2><center>What you're looking for:</center></h2>
+  <h2><center>What we're looking for:</center></h2>
     <!-- <dl><center>
   <form class="a" action="/companyname?data=audioCheck" method="post">
     <input type="checkbox" class="camera">Audio / Microphone</input>
@@ -70,14 +70,52 @@
   <div class="column" style="background-color: white;">
     <center><h2><center>Terms and Conditions</center></h2>
     <p class="terms">
-      <center><p id="inputText"> {{ audioWords }} </p></center>
-      <center><p id="inputText"> {{ dataWords }} </p></center>
-      <center><p id="inputText"> {{ userWords }} </p></center>
-      <center><p id="inputText"> {{ billingWords }} </p></center>
-      <center><p id="inputText"> {{ cameraWords }} </p></center>
-      <center><p id="inputText"> {{ allWords }} </p></center>
-      <center><p id="inputText"> {{ locationWords }} </p></center>
+      <center><p id="audioInputText"> {{ audioWords }} </p></center>
+      <center><p id="dataInputText"> {{ dataWords }} </p></center>
+      <center><p id="userInputText"> {{ userWords }} </p></center>
+      <center><p id="billingInputText"> {{ billingWords }} </p></center>
+      <center><p id="cameraInputText"> {{ cameraWords }} </p></center>
+      <center><p id="allInputText"> {{ allWords }} </p></center>
+      <center><p id="locationInputText"> {{ locationWords }} </p></center>
       </center>
+      <p id="audioHighlight"></p>
+      <p id="dataHighlight"></p>
+      <p id="userHighlight"></p>
+      <script>
+          // variables for user input (text)
+          var audioString = " {{ audioWords }}";
+          var dataString = " {{ dataWords }}";
+          var userString = " {{ userWords }}";
+          // function for highlighting text
+          function findUppercase(string){
+            alert("I'm at the start of the function");
+            var list = string.split(" ");
+            var i;
+            for (i = list.length - 1; i >= 0; i--){
+              var upperWord = list[i].toUpperCase();
+              var listWord = list[i];
+              if (listWord == upperWord){
+                // list[i] = "~HIGHLIGHT~";
+                // alert("match: " + list[i]);
+                // list[i] = listWord.fontcolor('red');
+                // list = list.splice(i, 0, "hi");
+                list[i] = list[i].toLowerCase();
+                list[i + 1] = "</span>";
+                list[i - 1] = "<span class='highlight'>";
+
+              }
+            }
+            return list.join(" ");
+          }
+          // reassign variables with highlighted text
+          audioString = findUppercase(audioString);
+          dataString = findUppercase(dataString);
+          userString = findUppercase(userString);
+
+          document.getElementById("audioHighlight").innerHTML = audioString;
+          document.getElementById("dataHighlight").innerHTML = dataString;
+          document.getElementById("userHighlight").innerHTML = userString;
+      </script>
     <dl><center>
 </dl></center>
   </div>
