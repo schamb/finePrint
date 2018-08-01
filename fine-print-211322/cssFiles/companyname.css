@@ -3,17 +3,17 @@
 }
 
 /* Create three equal columns that floats next to each other */
-.column {
-    float: left;
-    width: 71.85%;
-    height: 1000010000px;
-    padding: 10px;
-}
-.column-right{
-  font-size: 20px;
-  font-family: 'Roboto', sans-serif;
-  color: #4d2c3d
+.column { /*terms and conditions*/
+  float: left;
+  width: 72%;
+  padding: 10px;
+  border: 1px solid black;
 
+}
+.column-right{ /*key terms*/
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+    color: #4d2c3d
 }
 /* Clear floats after the columns */
 .row:after {
@@ -26,7 +26,7 @@ body {
   background-image: url("sayagata-400px.png");
 }
 
-.terms {
+.terms { /* key terms */
   color: rgb(42, 33, 11);
   font-family: 'Roboto', sans-serif;
   border: 1px solid black;
@@ -34,14 +34,16 @@ body {
 
 }
 
-.highc {
+.highc { /* keyterms */
   float: left;
-  width:400px;
+  width:28%;
   padding: 10px;
-  height: 100000000000000000px;
+  border: 1px solid black;
+
+
 }
 
-.redc {
+.redc { /* title */
   float: right;
   width: 428px;
   padding: 10px;
@@ -82,17 +84,9 @@ button {
   margin: 20px ;
   font-family: 'Roboto', sans-serif;
 }
-.row:after {
-  content: "";
-  clear: both;
-  display: table;
-}
+
 button:hover {background-color: #343d19}
 
-button:active {
-  background-color: #57652A;
-  box-shadow: 0 5px #666;
-  transform: translateY(4px);
 }
 input{
   font-family: 'Roboto', sans-serif;
@@ -106,24 +100,13 @@ input{
   font-size: 20px;
 }
 
-textarea{
-  width: 400px;
-  height: 400px;
 }
 .highlight {
   border-radius: 5px;
   font-size: 18px;
   font-family: 'Roboto', sans-serif;
   background-color: #c5a7ef;
-}
 
-.columntwitter {
-    float: left;
-    width: 71.85%;
-    height: 1000010000px;
-    padding: 10px;
-    font-family: 'Roboto', sans-serif;
-    font-size: 20px;
 }
 
 .scrolltext{
