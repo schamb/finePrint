@@ -115,7 +115,6 @@ textarea{
 }
 
 .columntwitter {
-<<<<<<< HEAD
   border: 1px solid black;
   float: left;
   width: 76.85%;
@@ -123,15 +122,6 @@ textarea{
   padding: 10px;
   font-family: 'Roboto', sans-serif;
   font-size: 20px;
-=======
-    border: 1px solid black;
-    float: left;
-    width: 1020px;
-    height: 1000010000px;
-    padding: 10px;
-    font-family: 'Roboto', sans-serif;
-    font-size: 20px;
->>>>>>> e3880fc824b1703a4771ba36864ed40860726e94
 
 }
 
