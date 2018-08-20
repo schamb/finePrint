@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+
+    <link rel="icon" href="1611.ico">
+    <link rel="stylesheet" type="text/css" href="../cssFiles/addcompany.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100" rel="stylesheet">
+
+
+    <meta charset="utf-8">
+
+    <title>Fine Print</title>
+  </head>
+  <body>
+
+      <!-- <button type="button"><a href="index.html">《 back</a></button> -->
+      <form action="/" method="get">
+        <button onclick="/">《  Back</button>
+      </form>
+
+    <form action="/companyname?companyName=name&companyTerms=terms&color=colorPicked" method="post" name="allCheckboxes">
+
+        <center>
+          <textarea id="coName" value = "Enter Company Name" name = "name" placeholder="Enter Company Name here:" required></textarea>
+          <p></p>
+        </center>
+
+        <div class = "column-left">
+
+            <textarea  id="tandc" value = "Insert text" name="terms" placeholder="Enter Privacy Policy or Terms and Conditions statements here (remeber to REMOVE SPACE YEAHHH):"required></textarea>
+          <button  id="addButton" type="submit" value="add">Add »</button>
+        </div>
+
+
+
+        <center>
+          <div class="column-right" id="keyTerms">
+          <h2><center>What do you want to look for?</center></h2>
+          <center>
+          <input type="checkbox" class="camera" name="audio">Audio / Microphone</input>
+          <p></p>
+          <input type="checkbox" class="camera" name="billing">Billing Information</input>
+          <p></p>
+
+          <input type="checkbox" class="camera" name="camera">Camera</input>
+          <p></p>
+
+      <input type="checkbox" class="camera" name="dataInfo">Data</input>
+      <p></p>
+
+      <input type="checkbox" class="camera" name="location">Location</input>
+      <p></p>
+
+      <input type="checkbox" class="camera" name="user">User Information</input>
+      <p></p>
+
+      <input type="checkbox" class="camera" name="all" checked>All</input>
+      <p></p>
+    </center>
+    </form>
+    <p id="otherString"></p>
+<p id="randomString"></p>
+
+
+
+    <!-- <div id="addButton">
+      <center><button onclick="window.location.href='companyname.html'">add</button></center> -->
+  </body>
+</html>

@@ -1,0 +1,83 @@
+#coName{
+  font-size: 40px;
+  color: #4d2c3d;
+  font-family: 'Roboto', sans-serif;
+  background-color: #f9f9f9;
+  text-align: center;
+  width: 1418px;
+  height: 50px;
+  border-radius: 5px;
+  border-color: black;
+
+}
+.column-left{
+  float: left;
+  width: 61%;
+  /* height: 565px; */
+}
+
+.column-right{
+  float: right;
+  width: 35%;
+  /* height: 565px; */
+}
+
+#tandc{
+  font-size: 16px;
+  border-radius: 5px;
+  color: #4d2c3d;
+  background-color: #f9f9f9;
+  font-family: 'Roboto', sans-serif;
+  float: left;
+  width: 99%;
+  height: 500px;
+  border-color: black;
+}
+#addButton{
+  /* float: bottom; */
+
+}
+
+::placeholder{
+  font-size:20px;
+  font-family: 'Roboto', sans-serif;
+  color: #4d2c3d;
+
+}
+
+#keyTerms{
+  float: right;
+  /* width: 100%; */
+  font-size: 20px;
+  font-family: 'Roboto', sans-serif;
+  color: #2A210B;
+  margin-right: 20px;
+}
+h2 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 35px;
+  color: #155765;
+}
+
+
+body {
+    background-image: url("sayagata-400px.png");
+}
+
+button {
+  display: inline-block;
+  padding: 5px 10px;
+  font-size: 20px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  border: 6px solid red;
+  background-color: #57652A;
+  border: none;
+  border-radius: 15px;
+  margin: 20px ;
+  font-family: 'Roboto', sans-serif;
+}
+.button:hover {background-color: #343d19}

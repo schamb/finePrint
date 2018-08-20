@@ -1,20 +1,21 @@
 h1{
-  font-family: 'Gothic A1', sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 80px;
   font-weight: lighter;
   color: #4D2C3D;
+
 }
 body{
-  background-color: #f7f6ea;
+  background-image: url("sayagata-400px.png");
 }
 h2{
-  font-family: 'Gothic A1', sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-weight: lighter;
   font-size: 30px;
   color: #AB9353;
   margin-left: 15%;
   margin-right: 15%;
-  margin-bottom: 5%;
+  margin-bottom: 28px;
 }
 
 button{
@@ -27,8 +28,12 @@ button{
     display: inline-block;
     font-size: 15px;
     border-radius: 15px;
-    font-family: 'Gothic A1', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 28px;
 }
+
+
+
 button:hover{
   background-color: #2A210B;
 }
@@ -36,4 +41,15 @@ button:hover{
 a{
   color: white;
   text-decoration: none;
+}
+
+h3{
+  font-family: 'Roboto', sans-serif;
+  font-weight: lighter;
+  font-size: 30px;
+  color: #155765;
+  margin-left: 15%;
+  margin-right: 15%;
+  margin-bottom: 20px;
+  margin-top: 10px;
 }

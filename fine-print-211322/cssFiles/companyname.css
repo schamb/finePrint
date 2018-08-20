@@ -1,0 +1,143 @@
+* {
+    box-sizing: border-box;
+}
+
+/* Create three equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 71.85%;
+  height: 1000010000px;
+  padding: 10px;
+
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+body {
+  background-image: url("sayagata-400px.png");
+}
+
+.terms {
+  color: rgb(42, 33, 11);
+  font-family: 'Roboto', sans-serif;
+  border: 1px solid black;
+  font-size: 25px;
+
+}
+
+.highc {
+  float: left;
+  width:400px;
+  padding: 10px;
+  height: 100000000000000000px;
+
+}
+
+.redc {
+  float: right;
+  width: 428px;
+  padding: 10px;
+  height: 100000000000px;
+}
+h1 {
+  color: rgb(77, 44, 61);
+  font-family: 'Roboto', sans-serif;
+  font-size: 70px;
+  margin-top: -2%;
+
+}
+
+h2 {
+  color:rgb(21, 87, 101);
+  font-family: 'Roboto', sans-serif;
+  font-size: 35px;
+}
+
+h3 {
+  color:rgb(21, 87, 101);
+  font-family: 'Roboto', sans-serif;
+  font-size: 25px;
+}
+
+button {
+  display: inline-block;
+  padding: 5px 10px;
+  font-size: 20px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #57652A;
+  border: none;
+  border-radius: 15px;
+  margin: 20px ;
+  font-family: 'Roboto', sans-serif;
+}
+.row:after {
+  content: "";
+  clear: both;
+  display: table;
+}
+button:hover {background-color: #343d19}
+
+button:active {
+  background-color: #57652A;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+input{
+  font-family: 'Roboto', sans-serif;
+  color: #AB9353;
+  font-size: 25px;
+}
+
+#inputText{
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+}
+
+textarea{
+  width: 400px;
+  height: 400px;
+}
+.highlight {
+  border-radius: 5px;
+  font-size: 18px;
+  font-family: 'Roboto', sans-serif;
+  background-color: #c5a7ef;
+}
+
+.columntwitter {
+  border: 1px solid black;
+  float: left;
+  width: 1023px;
+  height: 1000010000px;
+  padding: 10px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  background-color: white;
+
+}
+
+.scrolltext{
+height: 450px;
+width: 350px;
+border: 1px solid black;
+font-size: 35px;
+color: #4d2c3d;
+font-family: 'Roboto', sans-serif;
+overflow: auto;
+}
+
+#keyTerms{
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+
+}

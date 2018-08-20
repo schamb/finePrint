@@ -12,27 +12,31 @@ button{
 }
 button:hover{
   background-color: #2A210B;
+
 }
 h2{
   margin-top: 25%;
   font-family: 'Gothic A1', sans-serif;
   font-weight: lighter;
-  color: #AB9353;
+  color: #AB9353; /*text color*/
 }
 p{
   margin-top: 10%;
+  font-family: 'Roboto', sans-serif;
+  font-size: 19px;
+  color: #AB9353;
 }
 body{
-  background-color: #f7f6ea;
+  background-image: url("sayagata-400px.png");
 }
 
 h1{
-  font-family: 'Gothic A1', sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 60px;
   font-weight: lighter;
-  color: #4D2C3D;
+  color: #4D2C3D; /*text color*/
   margin-bottom: 5%;
-  
+
 }
 
 img{
@@ -42,4 +46,20 @@ img{
 #text{
   color: #155765;
   font-family: 'Gothic A1', sans-serif;
+}
+
+#shayna{
+  background-color: #57652A; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    border-radius: 15px;
+    font-family: 'Gothic A1', sans-serif;
+}
+#shayna:hover{
+  background-color: #2A210B;
 }

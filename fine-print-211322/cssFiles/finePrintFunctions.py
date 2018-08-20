@@ -14,7 +14,9 @@ def remove_punctuation(value):
 #funcion for DATA
 def find_DATA(document):
     #open keyTerms file
+
     termsDoc = open("txtFiles/DATA.txt", "r")
+
     keyTerms = termsDoc.readlines()
     termsDoc.close()
     for x in range(len(document)):
@@ -33,7 +35,9 @@ def find_DATA(document):
     return document
 def find_ALL(document):
     #open keyTerms file
+
     termsDoc = open("txtFiles/ALL.txt", "r")
+
     keyTerms = termsDoc.readlines()
     termsDoc.close()
     for x in range(len(document)):
@@ -52,7 +56,9 @@ def find_ALL(document):
     return document
 def find_LOCATION(document):
     #open keyTerms file
+
     termsDoc = open("txtFiles/LOCATION.txt", "r")
+
     keyTerms = termsDoc.readlines()
     termsDoc.close()
     for x in range(len(document)):
@@ -71,7 +77,9 @@ def find_LOCATION(document):
     return document
 def find_BILLING(document):
     #open keyTerms file
+
     termsDoc = open("txtFiles/BILLING.txt", "r")
+
     keyTerms = termsDoc.readlines()
     termsDoc.close()
     for x in range(len(document)):
@@ -90,7 +98,9 @@ def find_BILLING(document):
     return document
 def find_CAMERA(document):
     #open keyTerms file
+
     termsDoc = open("txtFiles/CAMERA.txt", "r")
+
     keyTerms = termsDoc.readlines()
     termsDoc.close()
     for x in range(len(document)):
@@ -109,7 +119,9 @@ def find_CAMERA(document):
     return document
 def find_USER(document):
     #open keyTerms file
+
     termsDoc = open("txtFiles/USER.txt", "r")
+
     keyTerms = termsDoc.readlines()
     termsDoc.close()
     for x in range(len(document)):
@@ -128,7 +140,9 @@ def find_USER(document):
     return document
 def find_MICROPHONE(document):
     #open keyTerms file
+
     termsDoc = open("txtFiles/MICROPHONE.txt", "r")
+
     keyTerms = termsDoc.readlines()
     termsDoc.close()
     for x in range(len(document)):

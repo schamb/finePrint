@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Fine Print</title>
+      <link rel="stylesheet" type="text/css" href="../cssFiles/companyname.css">
+    </head>
+      <link href="https://fonts.googleapis.com/css?family=Roboto:100" rel="stylesheet">
+
+
+  </head>
+  <body>
+    <form action="/addcompany" method="get">
+      <button onclick="/addcompany">《  Back</button>
+    </form>
+   <div class="row">
+     <center> <h1>{{ name }}</h1></center>
+  </div>
+<center>
+
+    <div class="row">
+  <div class="highc" style="background-color: #f7f6ea;">
+  <h2><center>What we're looking for:</center></h2>
+  <h3><center>Scroll down for more</center></h3>
+  <div class="scrolltext">
+
+  •  tracking<br>
+  •  location<br>
+  •  demographic<br>
+  •  billing<br>
+  •  sell<br>
+  •  selling<br>
+  •  data<br>
+  •  metadata<br>
+  •  storage<br>
+  •  gather information<br>
+  •  gather data<br>
+  •  cookies<br>
+  •  camera<br>
+  •  video<br>
+  •  photo<br>
+  •  user information<br>
+  •  contact information<br>
+  •  microphone access<br>
+  •  microphone<br>
+  •  audio<br>
+  •  share<br>
+  •  email address<br>
+  •  phone number<br>
+  •  collect information<br>
+  •  conditions of use<br>
+  •  opt-out<br>
+  •  opt out<br>
+  •  delete<br>
+  •  deactivate<br>
+  •  third-party<br>
+  •  third party<br>
+
+</div>
+
+
+
+</dl>
+  </div>
+  <div class="column" style="background-color: white;">
+    <center><h2><center>Terms and Conditions</center></h2>
+    <!-- <p class="terms"> -->
+    <div id="inputText">
+      <center><p id="audioInputText"> {{ audioWords }} </p></center>
+      <center><p id="dataInputText"> {{ dataWords }} </p></center>
+      <center><p id="userInputText"> {{ userWords }} </p></center>
+      <center><p id="billingInputText"> {{ billingWords }} </p></center>
+      <center><p id="cameraInputText"> {{ cameraWords }} </p></center>
+      <center><p id="allInputText"> {{ allWords }} </p></center>
+      <center><p id="locationInputText"> {{ locationWords }} </p></center>
+    </div>
+
+      </center>
+      <!-- <p id="audioHighlight"></p>
+      <p id="dataHighlight"></p>
+      <p id="userHighlight"></p>
+      <p id="billingHighlight"></p>
+      <p id="locationHighlight"></p>
+      <p id="allHighlight"></p>
+      <p id="cameraHighlight"></p> -->
+      <script>
+          // variables for user input (text)
+
+          //AUDIO
+          var audioString = "{{ audioWords }}";
+          // var audioPunctuationless = audioString.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g,"");
+          // audioString = audioPunctuationless.replace(/\s{2,}/g," ");
+          //DATA
+          var dataString = "{{ dataWords }}";
+          //USER
+          var userString = "{{ userWords }}";
+          var billingString = "{{ billingWords }}";
+          var locationString = "{{ locationWords }}";
+          var allString = "{{ allWords }}";
+          var cameraString = "{{ cameraWords }}";
+
+          // function for highlighting text
+          function findUppercase(string){
+            // alert("I'm at the start of the function");
+            var list = string.split(" ");
+            var i;
+            for (i = list.length - 1; i >= 0; i--){
+              // alert("I'm in the for loop");
+              var upperWord = list[i].toUpperCase();
+              var listWord = list[i];
+              // alert(listWord + " --> " + upperWord);
+              if (listWord == upperWord){
+                // alert("match: " + list[i]);
+                list[i] = list[i].toLowerCase();
+                list[i] = "<span class='highlight'>" + list[i] + "</span>";
+
+
+              }else{
+                list[i] = list[i].toLowerCase();
+              }
+            }
+            return list.join(" ");
+          }
+          // reassign variables with highlighted text
+          audioString = findUppercase(audioString);
+          dataString = findUppercase(dataString);
+          userString = findUppercase(userString);
+          billingString = findUppercase(billingString);
+          locationString = findUppercase(locationString);
+          allString = findUppercase(allString);
+          cameraString = findUppercase(cameraString);
+
+          // document.getElementById("audioHighlight").innerHTML = audioString;
+          // document.getElementById("dataHighlight").innerHTML = dataString;
+          // document.getElementById("userHighlight").innerHTML = userString;
+          // document.getElementById("billingHighlight").innerHTML = billingString;
+          // document.getElementById("locationHighlight").innerHTML = locationString;
+          // document.getElementById("allHighlight").innerHTML = allString;
+          // document.getElementById("cameraHighlight").innerHTML = cameraString;
+          document.getElementById("audioInputText").innerHTML = audioString;
+          document.getElementById("dataInputText").innerHTML = dataString;
+          document.getElementById("userInputText").innerHTML = userString;
+          document.getElementById("billingInputText").innerHTML = billingString;
+          document.getElementById("locationInputText").innerHTML = locationString;
+          document.getElementById("allInputText").innerHTML = allString;
+          document.getElementById("cameraInputText").innerHTML = cameraString;
+      </script>
+    <dl><center>
+</dl></center>
+  </div>
+</div>
+</center>
+
+  </body>
+</html>
