@@ -20,39 +20,44 @@ from google.appengine.ext import ndb
 template_directory = os.path.join(os.path.dirname(__file__),'templates')
 jinja_environment = jinja2.Environment(loader = jinja2.FileSystemLoader(template_directory))
 
+# home page
 class MainHandler(webapp2.RequestHandler):
 
     def get(self):
         template = jinja_environment.get_template('index.html')
         self.response.out.write(template.render())
 
+# add company page
 class UserInput(webapp2.RequestHandler):
     def get(self):
         template = jinja_environment.get_template('addcompany.html')
         self.response.out.write(template.render())
 
+# company name page whth highlighted words
 class OutputHandler(webapp2.RequestHandler):
     # user input company Name
     # def UIcompanyName():
     #     if addButton clicked:
     #         companyname.html
-    #
+
     #function to remove punctuation
     def remove_punctuation(self, value):
         result = ""
         for c in value:
             # If char is not punctuation, add it to the result.
+            #check if charecters are not in the alphebet
             if c not in string.punctuation:
                 result += c
         return result
 
-    #funcion for DATA
+    #funcion for finding DATA words
     def find_DATAINFO(self, document):
         #open keyTerms file
 
         keyTerms = ["metadata","data","storage","tracking","cookies","share"]
         document = document.lower()
 
+        #find if the terms in list match a term in the document and change it to uppercase
         for keyTerm in keyTerms:
             for match in re.finditer(keyTerm, document):
                 start = match.start()
@@ -60,9 +65,10 @@ class OutputHandler(webapp2.RequestHandler):
                 document = document[:start] + document[start:end].upper() + document[end:]
 
         return document
+    # function for finding ALL keywords
     def find_ALL(self, document):
         #open keyTerms file
-
+        #keyterms for DATA
         keyTerms = ["tracking","location","demographic","billing","selling","sell","metadata","data","storage","cookies","camera","video","photo","users","user","contact information","microphone","audio","share","email address","phone number","collected", "collects","collect",
         "gather","how we use", "conditions of use", "opt-out", "delete", "deactivates","deactivate", "third-party"]
         document = document.lower()
@@ -74,6 +80,7 @@ class OutputHandler(webapp2.RequestHandler):
                 document = document[:start] + document[start:end].upper() + document[end:]
 
         return document
+    # function for finding LOCATION key words
     def find_LOCATION(self, document):
         #open keyTerms file
         keyTerms = ["tracking", "location", "demographic"]
@@ -86,6 +93,7 @@ class OutputHandler(webapp2.RequestHandler):
                 document = document[:start] + document[start:end].upper() + document[end:]
 
         return document
+    # function for finding BILLING key words
     def find_BILLING(self, document):
         #open keyTerms file
         keyTerms = ["billing", "selling", "sell"]
@@ -98,6 +106,7 @@ class OutputHandler(webapp2.RequestHandler):
                 document = document[:start] + document[start:end].upper() + document[end:]
 
         return document
+    # function for finding CAMERA key words
     def find_CAMERA(self, document):
         #open keyTerms file
         keyTerms = ["camera", "video", "photo"]
@@ -138,6 +147,7 @@ class OutputHandler(webapp2.RequestHandler):
 
         return document
     def post(self):
+        #getting results from the user input (checkbox)
         companyTerms = self.request.get('terms')
         companyName = self.request.get('name')
         audioCheckBox = self.request.get('audio')
